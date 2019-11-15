@@ -55,6 +55,14 @@
 			.active{
 				background-color: #E8F2FF;
 			}
+			.highlightedButton{
+				background-color: gray;
+
+			}
+			textarea{
+				width: 50%;
+				height: 100%;
+			}
 
 		</style>
 	</head>
@@ -76,14 +84,28 @@
 
 		</div>
 
+		<div id="bodyContainer">
+			<textarea id="htmlTexarea">
+				HTML Text Code Here
+			</textarea>
+		</div>
+
+
 
 	<script type="text/javascript">
 
 		$(".toggleButton").hover(function(){
-			$(this).css("background-color","gray");
+			$(this).addClass("highlightedButton");
 		}, function(){
-			$(this).css("background-color", "#EEEEEE");
+			$(this).removeClass("highlightedButton");
 		});
+
+		$(".toggleButton").click(function(){
+			$(this).toggleClass("active");
+			$(this).removeClass("highlightedButton");
+		});
+
+		$("textarea").height($(window).height() - $("#header").height());
 
 	</script>
 
