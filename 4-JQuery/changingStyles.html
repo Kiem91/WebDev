@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery Changing Content</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="..\base.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<style type="text/css">
+			.circle{
+				width:150px;
+				height:150px;
+				border-radius:50%;
+				background-color:green;
+				margin:10px;
+			}
+			
+			.square{
+				width:150px;
+				height:150px;
+				background-color:red;
+				margin:10px;
+			}
+		</style>
+
+	</head>
+    <body>
+	
+		<div id="intro" class="normal">
+			This page demonstrates some basic functionality of jQuery. Specifically, how to change styles when certain events are triggered.
+			
+		</div>
+
+		<div class="normal">
+
+			<div class="circle"></div>
+
+			<div class="square"></div>
+			<div class="square"></div>
+
+			<p id="p1">This text will fade out when the button is clicked</p>
+			<p id="p2">But this text appears after its gone!</p>
+			<button id="fadeOut">Fade</button>
+
+		</div>
+		
+		
+		
+		
+		<script type="text/javascript">
+
+			$("#p2").css("display","none");
+		
+			if (typeof jQuery == "undefined"){
+				alert("jQuery is not installed");
+			}
+
+			/*$("div").click(function(){
+				$(this).css("display", "none");
+			});*/
+
+			$("#fadeOut").click(function(){
+				$("#p1").fadeOut("slow",function(){
+					$("#p2").fadeIn();
+				});
+			});
+
+
+
+			/*$(".circle").click(function(){
+				$(".circle").css("display","none");
+			});	
+
+			$("#s1").click(function(){
+				$("#s1").css("display","none");
+			});	
+
+			$("#s2").click(function(){
+				$("#s2").css("display","none");
+			});*/
+		
+		
+		</script>
+		
+	</body>
+</html>

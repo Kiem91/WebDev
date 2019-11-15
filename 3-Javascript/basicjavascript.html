@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Variables</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="..\base.css"/>
+	</head>
+    <body>
+	
+		<div>
+			<p id="p1">This is some basic text</p>
+			<input type="text" id="box1">
+			<button id="b1">Change the text</button>
+		</div>
+		
+		<div>
+			<p>Guess the magic word:</p>
+			<input type="text" id="guessBox">
+			<button id="guessButton">Guess</button>
+			<button id="guessedButton">Show my guesses</button>
+			<p id="word"></p>
+		</div>
+		
+		<div id="guessGame">
+			<p>What number am I thinking of? (1 - 5)</p>
+			<input type="text" id="numberBox">
+			<button id="numberButton">Guess</button>
+		</div>
+		
+		<div id="guessGame2">
+			<p>What number are you thinking of? (1 - 5)</p>
+			<p><input type="text" id="numberBox2"> <button id="numberButton2">Guess</button></p>
+			<p="win"></p>
+		</div>
+		
+		<script type="text/javascript">
+			//variables
+			
+			document.getElementById("b1").onclick = function(){
+			
+				var textEntered = "";
+				//pull text from text box
+				textEntered = document.getElementById("box1").value;
+				
+				//alert(textEntered);
+				
+				document.getElementById("p1").innerHTML = textEntered;
+			
+			}
+			
+			
+			//arrays
+			var myArray = new Array();
+			
+			myArray[0] = "Pizza";
+			myArray[1] = "Chocolate";
+			
+			//alert(myArray[0]);
+			
+			myArray.push("Burgers");
+			
+			myArray.splice(1,2);
+			
+			//if statements
+			
+			document.getElementById("guessButton").onclick = function(){
+				var magicWord = "Hocus Pocus";
+				var guessText = "";
+				guessText = document.getElementById("guessBox").value;
+				wordGuesses.push(guessText);
+				
+				if (guessText == magicWord){
+					alert("correct!");
+				}else{
+					alert("wrong!");
+				}
+			}
+			
+			//number guessing game
+			
+			var numbers = new Array();
+			//var i = 0; -- don't need to initialize variable outside loop.
+				
+			for (i=0; i<5; i++){
+				numbers[i] = i+1;
+				//alert(numbers[i]);
+			}
+			
+			
+			document.getElementById("numberButton").onclick = function(){
+							
+				var numberGuess = document.getElementById("numberBox").value;
+				//alert(numberGuess);
+				var numberCorrect = numbers[Math.floor(Math.random() * numbers.length)];
+				
+				if (numberGuess == numberCorrect){
+					alert("correct!");
+				}else{
+					alert("wrong!");
+				}
+			}	
+			
+			
+			//Loops
+			var wordGuesses = [];
+			var words="You have guessed: ";
+			document.getElementById("guessedButton").onclick = function(){
+				for (i=0; i<wordGuesses.length; i++){
+					words = words + wordGuesses[i] + ",";
+				}
+				
+				document.getElementById("word").innerHTML = words;
+			}
+			
+			
+			//number guessing game 2
+			//var numberCorrect2 = document.getElementById("numberBox2").value;
+			//var numberGuess2 = 0;
+			//var numberOfGuesses = 0;
+			
+			document.getElementById("numberButton2").onclick = function(){
+				var numberCorrect2 = document.getElementById("numberBox2").value;
+				//alert(numberCorrect2);
+				var numberOfGuesses = 1;
+				var escape = false;
+				var winString = "<p>Got it! Your number was: "+numberCorrect2+" Got it in "+numberOfGuesses+" tries.</p>";
+				
+				while(escape == false){
+					var numberGuess2 = Math.floor(Math.random()*6);
+					//alert(numberGuess2);
+				
+					if(numberGuess2 == numberCorrect2){
+						document.getElementById("win").innerHTML = winString;
+						alert(winString);
+						escape = true;
+										
+					}else{
+						numberOfGuesses++;
+					
+					}
+				}
+			}
+			
+		
+		</script>
+	</body>
+</html>

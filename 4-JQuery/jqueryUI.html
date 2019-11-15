@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="..\base.css" />
+		<link rel="stylesheet" href="..\jquery-ui-1.12.1\jquery-ui.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+		<script src="..\jquery-ui-1.12.1\jquery-ui.js"></script>
+
+		<style>
+			.demo{
+				width:100px;
+				height:100px;
+				margin: 10px;
+				padding: 5px;
+				
+				border: 1px solid black;
+				float: left;
+				background: white;
+				important;
+			}
+			span.clear{
+				clear: left;
+				display: block;
+			}
+
+			.listElement{
+				width:100px;
+				height: 25px;
+				margin: 10px;
+				padding: 5px;
+				border: 1px solid black;
+			}
+			#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+			#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+			#sortable li span { position: absolute; margin-left: -1.3em; }
+		</style>
+	</head>
+
+	<body>
+		
+		<div id="container1" class="normal">
+			<h3>Draggables</h3>
+			<div id="freeBird" class="demo">I can go anywhere</div>
+			<div id="upDown" class="demo">I can only go up and down</div>
+			<div id="leftRight" class="demo">I can only go left and right</div>
+			<div id="contained" class="demo">I can't leave the box</div>
+			<span class="clear"></span>
+		</div>
+
+		<div id="container2" class="normal">
+			<h3>Adjustables</h3>
+			<div id="adjustable1" class="demo">Freely adjustable</div>
+			<div id="adjustable2" class="demo">Snap to grid</div>
+			<div id="adjustable3" class="demo">We adjust together</div>
+			<div id="adjustable4" class="demo">We adjust together</div>
+			<span class="clear"></span>
+		</div>
+
+		<div id="container3" class="normal">
+			<h3>Droppables</h3>
+			<div id="dragMe" class="demo">Drag me</div>
+			<div id="dropHere" class="demo">Drop here</div>
+		</div>
+
+		<div id="container4" class="normal">
+			<h3>Sortable Lists</h3>
+			<ul id="sortable">
+				<li class="listElement">Item 1</li>
+				<li class="listElement">Item 2</li>
+				<li class="listElement">Item 3</li>
+				<li class="listElement">Item 4</li>
+				<li class="listElement">Item 5</li>
+				<li class="listElement">Item 6</li>
+				<li class="listElement">Item 7</li>
+			</ul>
+		</div>
+
+
+
+
+
+
+	<script>
+
+		$( function() {
+    $( ".normal" ).accordion();
+  } );
+			$("#freeBird").draggable();
+			$("#upDown").draggable({ axis: "y" });
+			$("#leftRight").draggable({ axis: "x" });
+			$("#contained").draggable({ containment: "#container1", scroll: false });
+
+
+    		$( "#adjustable1" ).resizable();
+    		$( "#adjustable2" ).resizable({grid: 50});
+    		$( "#adjustable3" ).resizable({alsoResize: "#adjustable4"});
+    		$( "#adjustable4" ).resizable({alsoResize: "#adjustable3"});
+
+    		$("#dragMe").draggable();
+    		$("#dropHere").droppable({ drop: function(event,ui){
+    			alert("dropped!");
+    		}});
+
+   			$("#sortable").sortable();
+   			$("#sortable").disableSelection();
+	</script>
+
+	</body>
+
+</html>

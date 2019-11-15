@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery basics</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="..\base.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<style type="text/css">
+			#circle{
+				width:150px;
+				height:150px;
+				border-radius:50%;
+				background-color:green;
+				margin:10px;
+			}
+			
+			.square{
+				width:150px;
+				height150px;
+				background-color:red;
+				margin:10px;
+			}
+		</style>
+
+	</head>
+    <body>
+	
+		<div id="intro" class="normal">
+			This page demonstrates some basic functionality of jQuery.
+			
+		</div>
+		
+		<div class="normal">
+			
+			<p>Click the shapes.</p>
+			<div id="circle"></div>
+			<div class="square"></div>
+			<div class="square"></div>
+			
+		</div>
+		
+		<div class="normal">
+			<button>Click to change the page.</button>
+			<iframe src="http://www.udemy.com"></iframe>
+			
+		</div>
+		
+		
+		<script type="text/javascript">
+		
+			if (typeof jQuery == "undefined"){
+				alert("jQuery is not installed");
+			}
+			
+			$("#circle").click(function(){
+				$("p").html("You clicked the circle.");
+			});
+			
+			$(".square").click(function(){
+				$("p").html("You clicked a square.");
+			});
+			
+			$("#circle").hover(function(){
+				$("p").html("That's the circle.");
+			});
+			
+			$("#circle").hover(function(){
+				$("p").html("That's a square.");
+			});
+			
+			$("button").click(function(){
+				$("iframe").attr("src", "https://www.arbor.edu");
+			});
+		
+		</script>
+		
+	</body>
+</html>

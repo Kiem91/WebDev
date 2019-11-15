@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Home</title>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="..\base.css"/>
+	</head>
+    <body>
+	
+		<div>
+		
+			<p id="p1">test paragraph 1</p>
+			
+			<p id="p2">test paragraph 2</p>
+			
+			<button id="button1">Change Text</button>
+			
+			<button id="button2">Add Text</button>
+			
+			<p id="surprise"> </p>
+		
+			<p id="moreText">This is some plain text</p>
+			<button id="styleText">Style Text</button>
+		
+			<script type="text/javascript">
+			
+				document.getElementById("button1").onclick = function() {
+					//alert('button pressed!!!')
+					document.getElementById("p1").innerHTML = "changed paragraph 1"
+				}
+				
+				document.getElementById("button2").onclick = function() {
+					//alert('button pressed!!!')
+					document.getElementById("p2").innerHTML =  document.getElementById("p2").innerHTML + "5"
+				}
+				
+				document.getElementById("button2").onclick = function() {
+					//alert('button pressed!!!')
+					document.getElementById("surprise").innerHTML =  "BAM New Text!"
+				}
+				
+				document.getElementById("styleText").onclick = function(){
+					document.getElementById("moreText").style.color = "red";
+					document.getElementById("moreText").style.fontSize = "50px";
+					document.getElementById("moreText").innerHTML = "Now it is fancy text!";
+					
+				}
+			</script>
+		
+		</div>
+		
+	
+    </body>
+</html>
