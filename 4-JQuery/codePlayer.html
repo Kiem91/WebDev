@@ -68,6 +68,7 @@
 			.panel{
 				float:left;
 				width: 50%;
+				border-left: none;
 			}
 
 			iframe{
@@ -98,9 +99,9 @@
 		</div>
 
 		<div id="bodyContainer">
-			<textarea id="htmlPanel" class="panel">Hello World! </textarea>
-			<textarea id="cssPanel" class="panel hidden">p { color: green; }</textarea>
-			<textarea id="jsPanel" class="panel hidden">alert("Hi there!");</textarea>
+			<textarea id="htmlPanel" class="panel"><p id="p1">Hello World!</p> </textarea>
+			<textarea id="cssPanel" class="panel hidden"></textarea>
+			<textarea id="jsPanel" class="panel hidden"></textarea>
 
 			<iframe id="outputPanel" class="panel"></iframe>
 		</div>
@@ -116,6 +117,32 @@
 			$(this).removeClass("highlightedButton");
 		});
 
+		//Set default size of panels
+		$(".panel").height($(window).height() - $("#header").height()-15);
+
+		$(".panel").width(($(window).width()/2)-10);
+
+		//iniialize output
+
+		function updateOutput(){
+
+			$("#outputPanel").contents().find("html").html(
+				"<html><head><style type='text/css'>"+
+				$("#cssPanel").val()+
+				"</style></head><body>"+
+				$("#htmlPanel").val()+
+				"</body></html>");
+
+			document.getElementById("outputPanel").contentWindow.eval($("#jsPanel").val());
+
+			//eval($("#jsPanel").val());
+		};
+
+			
+
+		updateOutput();
+
+		//Select panels and divide page by number active
 		$(".toggleButton").click(function(){
 			$(this).toggleClass("active");
 			$(this).removeClass("highlightedButton");
@@ -130,21 +157,21 @@
 			$(".panel").width(($(window).width()/panelsActive-10));
 
 			//alert(panelsActive);
-
-
 		});
 
-		//Set size of panels
-		$(".panel").height($(window).height() - $("#header").height()-15);
-
-		$(".panel").width(($(window).width()/2)-10);
-
-		//iFrame content set up
 		
 
+		//iFrame content
+
 		$("textarea").on('change keyup paste', function(){
-			$("#outputPanel").contents().find("html").html($("#htmlPanel").val());
+			updateOutput();
+
 		});
+
+		
+		
+
+		
 
 
 
