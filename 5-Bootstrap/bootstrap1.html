@@ -12,25 +12,36 @@
     	textarea{
     		resize: none;
     	}
+    	body{
+    		position: relative;
+    	}
+    	.container{
+    		margin-top: 70px;
+    	}
     </style>
 
     <title>Bootstrap1</title>
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#navbar" data-offset="70">
 
-  	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  	<nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
 	  <a class="navbar-brand" href="#">Navbar</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
 
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-auto">
+	    <ul class="nav nav-pills">
 	      <li class="nav-item active">
-	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	        <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="#">Link</a>
+	        <a class="nav-link" href="#form">Basic Form</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#table">Table</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#card">Cards</a>
 	      </li>
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -43,215 +54,255 @@
 	          <a class="dropdown-item" href="#">Something else here</a>
 	        </div>
 	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-	      </li>
 	    </ul>
 	    <form class="form-inline my-2 my-lg-0">
 	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 	    </form>
-	  </div>
 	</nav>
+	<div >
+		  	<div class="container">
+		  		<h2 id="home">Hello, world!</h2>
+			  <div class="row">
+			    <div id="column1" class="col-md-6">
+			      One of two columns, 50-50 split of the display:
+			      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in vehicula turpis. Vivamus ornare efficitur magna vitae convallis. Vivamus in dignissim velit, vitae lobortis justo. Integer aliquet dapibus dignissim. Suspendisse fermentum quam vel leo tempus pharetra. Duis id suscipit lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer elementum libero in consectetur facilisis. Suspendisse et iaculis ex, non dapibus velit. Fusce quis ante vitae dui sagittis congue. Pellentesque dolor magna, mollis ut quam et, faucibus bibendum lacus. In eget dui facilisis, molestie metus quis, mattis eros. Aenean nibh lorem, tincidunt eget turpis pulvinar, maximus semper libero. Nulla facilisi. Integer fermentum leo in laoreet feugiat.
+			    </div>
+			    <div id="column2" class="col-md-6">
+			      Two of two columns, 50-50 split of the display:
+			      Integer sodales scelerisque erat, nec laoreet ante feugiat at. Aenean mollis, nisl a imperdiet posuere, purus metus pulvinar tortor, ac cursus diam orci sed quam. Maecenas lacus orci, mollis eget purus accumsan, placerat viverra urna. Maecenas quis magna urna. Quisque sem neque, ullamcorper eget diam eget, consectetur auctor lectus. Praesent porta sem vitae egestas aliquet. Nullam lacinia malesuada nisl, vel aliquet mauris consequat non. Duis malesuada eros nec felis sodales volutpat. Duis efficitur, diam nec vestibulum facilisis, enim dolor semper nunc, maximus gravida risus dolor ut dui.
+			    </div>
+			  </div>
+			</div>
 
-  	<div class="container">
-  		<h1>Hello, world!</h1>
-	  <div class="row">
-	    <div id="column1" class="col-md-6">
-	      One of two columns, 50-50 split of the display:
-	      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in vehicula turpis. Vivamus ornare efficitur magna vitae convallis. Vivamus in dignissim velit, vitae lobortis justo. Integer aliquet dapibus dignissim. Suspendisse fermentum quam vel leo tempus pharetra. Duis id suscipit lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer elementum libero in consectetur facilisis. Suspendisse et iaculis ex, non dapibus velit. Fusce quis ante vitae dui sagittis congue. Pellentesque dolor magna, mollis ut quam et, faucibus bibendum lacus. In eget dui facilisis, molestie metus quis, mattis eros. Aenean nibh lorem, tincidunt eget turpis pulvinar, maximus semper libero. Nulla facilisi. Integer fermentum leo in laoreet feugiat.
-	    </div>
-	    <div id="column2" class="col-md-6">
-	      Two of two columns, 50-50 split of the display:
-	      Integer sodales scelerisque erat, nec laoreet ante feugiat at. Aenean mollis, nisl a imperdiet posuere, purus metus pulvinar tortor, ac cursus diam orci sed quam. Maecenas lacus orci, mollis eget purus accumsan, placerat viverra urna. Maecenas quis magna urna. Quisque sem neque, ullamcorper eget diam eget, consectetur auctor lectus. Praesent porta sem vitae egestas aliquet. Nullam lacinia malesuada nisl, vel aliquet mauris consequat non. Duis malesuada eros nec felis sodales volutpat. Duis efficitur, diam nec vestibulum facilisis, enim dolor semper nunc, maximus gravida risus dolor ut dui.
-	    </div>
-	  </div>
-	</div>
+			<!-- Button trigger modal -->
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<button type="button" class="btn btn-primary" data-toggle="modal tooltip" data-placement="left" title="use to edit this column!" data-target="#editModal" data-name="editColumn1">
+							  Edit Column 1
+							</button>
+						</div>
+						<div class="col-md-6">
+							<button type="button" class="btn btn-primary" data-toggle="modal tooltip" data-placement="left" title="use to edit this column!" data-target="#editModal" data-name="editColumn2">
+							  Edit Column 2
+							</button>
+						</div>
+					</div>
+				</div>
 
-	<!-- Button trigger modal -->
+				<!-- Modal -->
+				<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Edit Text</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        <div class="md-form">
+				          <i class="fas fa-pencil prefix grey-text"></i>
+				          <textarea type="text" id="modalInput" class="md-textarea form-control" rows="4"></textarea>
+				        </div>
+				      </div>
+				      <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				        <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalSaveButton">Save changes</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+			<div class="container">
+		  		<h4>filler1</h4>
+			    <div>
+			      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in vehicula turpis. Vivamus ornare efficitur magna vitae convallis. Vivamus in dignissim velit, vitae lobortis justo. Integer aliquet dapibus dignissim. Suspendisse fermentum quam vel leo tempus pharetra. Duis id suscipit lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer elementum libero in consectetur facilisis. Suspendisse et iaculis ex, non dapibus velit. Fusce quis ante vitae dui sagittis congue. Pellentesque dolor magna, mollis ut quam et, faucibus bibendum lacus. In eget dui facilisis, molestie metus quis, mattis eros. Aenean nibh lorem, tincidunt eget turpis pulvinar, maximus semper libero. Nulla facilisi. Integer fermentum leo in laoreet feugiat.
+
+			      Integer sodales scelerisque erat, nec laoreet ante feugiat at. Aenean mollis, nisl a imperdiet posuere, purus metus pulvinar tortor, ac cursus diam orci sed quam. Maecenas lacus orci, mollis eget purus accumsan, placerat viverra urna. Maecenas quis magna urna. Quisque sem neque, ullamcorper eget diam eget, consectetur auctor lectus. Praesent porta sem vitae egestas aliquet. Nullam lacinia malesuada nisl, vel aliquet mauris consequat non. Duis malesuada eros nec felis sodales volutpat. Duis efficitur, diam nec vestibulum facilisis, enim dolor semper nunc, maximus gravida risus dolor ut dui.
+			    </div>
+			</div>
+
+
+			<div class="container">
+				<h2 id="form">Forms!</h2>
+			<form>
+			  <div class="form-group row">
+			    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+			    <div class="col-sm-10">
+			      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+			    </div>
+			  </div>
+			  <div class="form-group row">
+			    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+			    <div class="col-sm-10">
+			      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+			    </div>
+			  </div>
+			  <fieldset class="form-group">
+			    <div class="row">
+			      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+			      <div class="col-sm-10">
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+			          <label class="form-check-label" for="gridRadios1">
+			            First radio
+			          </label>
+			        </div>
+			        <div class="form-check">
+			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+			          <label class="form-check-label" for="gridRadios2">
+			            Second radio
+			          </label>
+			        </div>
+			        <div class="form-check disabled">
+			          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+			          <label class="form-check-label" for="gridRadios3">
+			            Third disabled radio
+			          </label>
+			        </div>
+			      </div>
+			    </div>
+			  </fieldset>
+			  <div class="form-group row">
+			    <div class="col-sm-2">Checkbox</div>
+			    <div class="col-sm-10">
+			      <div class="form-check">
+			        <input class="form-check-input" type="checkbox" id="gridCheck1">
+			        <label class="form-check-label" for="gridCheck1">
+			          Example checkbox
+			        </label>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form-group row">
+			    <div class="col-sm-10">
+			      <button type="submit" class="btn btn-primary">Sign in</button>
+			    </div>
+			  </div>
+			</form>
+		</div>
+
 		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-name="editColumn1">
-					  Edit Column 1
-					</button>
+		  		<h4>filler2</h4>
+			    <div>
+			      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in vehicula turpis. Vivamus ornare efficitur magna vitae convallis. Vivamus in dignissim velit, vitae lobortis justo. Integer aliquet dapibus dignissim. Suspendisse fermentum quam vel leo tempus pharetra. Duis id suscipit lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer elementum libero in consectetur facilisis. Suspendisse et iaculis ex, non dapibus velit. Fusce quis ante vitae dui sagittis congue. Pellentesque dolor magna, mollis ut quam et, faucibus bibendum lacus. In eget dui facilisis, molestie metus quis, mattis eros. Aenean nibh lorem, tincidunt eget turpis pulvinar, maximus semper libero. Nulla facilisi. Integer fermentum leo in laoreet feugiat.
+
+			      Integer sodales scelerisque erat, nec laoreet ante feugiat at. Aenean mollis, nisl a imperdiet posuere, purus metus pulvinar tortor, ac cursus diam orci sed quam. Maecenas lacus orci, mollis eget purus accumsan, placerat viverra urna. Maecenas quis magna urna. Quisque sem neque, ullamcorper eget diam eget, consectetur auctor lectus. Praesent porta sem vitae egestas aliquet. Nullam lacinia malesuada nisl, vel aliquet mauris consequat non. Duis malesuada eros nec felis sodales volutpat. Duis efficitur, diam nec vestibulum facilisis, enim dolor semper nunc, maximus gravida risus dolor ut dui.
+			    </div>
+		</div>
+
+			<div class="container">
+				<h2 id="table">Tables!</h2>
+				<table class="table table-dark">
+				  <thead>
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">First</th>
+				      <th scope="col">Last</th>
+				      <th scope="col">Handle</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+				    <tr>
+				      <th scope="row">1</th>
+				      <td>Mark</td>
+				      <td>Otto</td>
+				      <td>@mdo</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">2</th>
+				      <td>Jacob</td>
+				      <td>Thornton</td>
+				      <td>@fat</td>
+				    </tr>
+				    <tr>
+				      <th scope="row">3</th>
+				      <td>Larry</td>
+				      <td>the Bird</td>
+				      <td>@twitter</td>
+				    </tr>
+				  </tbody>
+				</table>
+			</div>
+
+			<div class="container">
+		  		<h4>filler3</h4>
+			    <div>
+			      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in vehicula turpis. Vivamus ornare efficitur magna vitae convallis. Vivamus in dignissim velit, vitae lobortis justo. Integer aliquet dapibus dignissim. Suspendisse fermentum quam vel leo tempus pharetra. Duis id suscipit lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer elementum libero in consectetur facilisis. Suspendisse et iaculis ex, non dapibus velit. Fusce quis ante vitae dui sagittis congue. Pellentesque dolor magna, mollis ut quam et, faucibus bibendum lacus. In eget dui facilisis, molestie metus quis, mattis eros. Aenean nibh lorem, tincidunt eget turpis pulvinar, maximus semper libero. Nulla facilisi. Integer fermentum leo in laoreet feugiat.
+
+			      Integer sodales scelerisque erat, nec laoreet ante feugiat at. Aenean mollis, nisl a imperdiet posuere, purus metus pulvinar tortor, ac cursus diam orci sed quam. Maecenas lacus orci, mollis eget purus accumsan, placerat viverra urna. Maecenas quis magna urna. Quisque sem neque, ullamcorper eget diam eget, consectetur auctor lectus. Praesent porta sem vitae egestas aliquet. Nullam lacinia malesuada nisl, vel aliquet mauris consequat non. Duis malesuada eros nec felis sodales volutpat. Duis efficitur, diam nec vestibulum facilisis, enim dolor semper nunc, maximus gravida risus dolor ut dui.
+			    </div>
+			</div>
+
+			<div class="container">
+				<h2 id="card">Cards!</h2>
+
+				<div class="row">
+				<div class="col-sm-3">
+					<div class="card card-block" style="width: 18rem;">
+					  <img class="card-img-top" src="..." alt="Card image cap">
+					  <div class="card-body">
+					    <h5 class="card-title">Card title</h5>
+					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					    <a href="#" class="btn btn-primary">Go somewhere</a>
+					  </div>
+					</div>
 				</div>
-				<div class="col-md-6">
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-name="editColumn2">
-					  Edit Column 2
-					</button>
+
+				<div class="col-sm-3">
+					<div class="card card-block" style="width: 18rem;">
+					  <img class="card-img-top" src="..." alt="Card image cap">
+					  <div class="card-body">
+					    <h5 class="card-title">Card title</h5>
+					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					    <a href="#" class="btn btn-primary">Go somewhere</a>
+					  </div>
+					</div>
 				</div>
+
+				<div class="col-sm-3 card-block">
+					<div class="card" style="width: 18rem;">
+					  <img class="card-img-top" src="..." alt="Card image cap">
+					  <div class="card-body">
+					    <h5 class="card-title">Card title</h5>
+					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					    <a href="#" class="btn btn-primary">Go somewhere</a>
+					  </div>
+					</div>
+				</div>
+
+				<div class="col-sm-3 card-block">
+					<div class="card" style="width: 18rem;">
+					  <img class="card-img-top" src="..." alt="Card image cap">
+					  <div class="card-body">
+					    <h5 class="card-title">Card title</h5>
+					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					    <a href="#" class="btn btn-primary">Go somewhere</a>
+					  </div>
+					</div>
+				</div>
+
 			</div>
+
 		</div>
 
-		<!-- Modal -->
-		<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title" id="exampleModalLabel">Edit Text</h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		      </div>
-		      <div class="modal-body">
-		        <div class="md-form">
-		          <i class="fas fa-pencil prefix grey-text"></i>
-		          <textarea type="text" id="modalInput" class="md-textarea form-control" rows="4"></textarea>
-		        </div>
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		        <button type="button" class="btn btn-primary" data-dismiss="modal" id="modalSaveButton">Save changes</button>
-		      </div>
-		    </div>
-		  </div>
-		</div>
+		<div class="container">
+		  		<h4>filler4</h4>
+			    <div>
+			    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec felis lacus. Suspendisse in hendrerit augue, ac viverra lorem. In sed aliquam purus. Duis efficitur sollicitudin blandit. Vivamus sit amet tortor a nibh consequat semper ac eget eros. Cras congue eros sit amet ipsum mattis porttitor. Nulla facilisi. Donec sed tristique nisl. Suspendisse potenti. Etiam sit amet lacus commodo, pretium libero id, accumsan mi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec nec mauris lorem. Sed nisi felis, commodo nec sapien non, lacinia varius nisl. Aenean sollicitudin, dui nec mollis semper, turpis ipsum scelerisque orci, sit amet laoreet nisl massa eu orci. Fusce tincidunt ultrices tempor. Vestibulum a commodo mi.
 
+			      Pellentesque gravida ornare mollis. Sed mollis tempor diam, id vestibulum erat fringilla ut. Proin sagittis nisl sed odio maximus, ac sagittis justo blandit. Integer auctor nisi non iaculis hendrerit. Curabitur imperdiet, risus in fermentum finibus, nulla urna porta libero, sed mollis metus ipsum eu neque. Suspendisse risus nulla, bibendum eu tempor in, eleifend in mi. Nullam turpis orci, bibendum vel egestas non, vulputate eget mauris. Mauris ullamcorper, elit ut tempus pulvinar, turpis purus cursus lorem, eget vulputate justo sem ac augue. Etiam suscipit lacus erat, in consectetur urna luctus ut. Integer eleifend erat bibendum enim sollicitudin, sed pretium ante ullamcorper. Ut egestas justo id eros scelerisque, sit amet tempor arcu maximus. Nulla facilisi. Morbi pellentesque risus ac sapien gravida dapibus. Sed luctus, ex et eleifend elementum, ante libero hendrerit odio, pharetra tincidunt nulla est et ex.
 
+			      Etiam laoreet rutrum hendrerit. Vestibulum ornare lobortis ornare. Donec viverra at nisi eu dignissim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum nec dolor vitae ante pulvinar varius vitae non massa. Sed mattis malesuada mi, quis elementum metus ullamcorper id. Aenean enim tellus, fermentum id libero id, fermentum facilisis sapien.
 
+			      Nunc pellentesque pulvinar condimentum. Ut nec sagittis felis. Proin aliquet aliquam elementum. Vivamus sagittis aliquam elementum. Duis egestas finibus magna, eu lobortis sem varius nec. Aenean tristique, sem id placerat feugiat, leo elit bibendum nunc, non gravida neque quam sit amet mi. Integer tempor ut quam eu hendrerit. Praesent ut est consequat, viverra mi eget, porttitor velit. Integer et faucibus magna. Cras a aliquet est, quis aliquet ipsum. Morbi aliquam quam nec ipsum vestibulum, sit amet iaculis arcu accumsan. Aliquam eros ligula, auctor nec bibendum vitae, interdum et enim. Mauris accumsan neque vitae efficitur porttitor. Maecenas eu purus ipsum. Morbi tincidunt ex sed massa lacinia tristique.
 
-	<div class="container">
-	<form>
-	  <div class="form-group row">
-	    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-	    <div class="col-sm-10">
-	      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-	    </div>
-	  </div>
-	  <div class="form-group row">
-	    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-	    <div class="col-sm-10">
-	      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-	    </div>
-	  </div>
-	  <fieldset class="form-group">
-	    <div class="row">
-	      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-	      <div class="col-sm-10">
-	        <div class="form-check">
-	          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-	          <label class="form-check-label" for="gridRadios1">
-	            First radio
-	          </label>
-	        </div>
-	        <div class="form-check">
-	          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-	          <label class="form-check-label" for="gridRadios2">
-	            Second radio
-	          </label>
-	        </div>
-	        <div class="form-check disabled">
-	          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-	          <label class="form-check-label" for="gridRadios3">
-	            Third disabled radio
-	          </label>
-	        </div>
-	      </div>
-	    </div>
-	  </fieldset>
-	  <div class="form-group row">
-	    <div class="col-sm-2">Checkbox</div>
-	    <div class="col-sm-10">
-	      <div class="form-check">
-	        <input class="form-check-input" type="checkbox" id="gridCheck1">
-	        <label class="form-check-label" for="gridCheck1">
-	          Example checkbox
-	        </label>
-	      </div>
-	    </div>
-	  </div>
-	  <div class="form-group row">
-	    <div class="col-sm-10">
-	      <button type="submit" class="btn btn-primary">Sign in</button>
-	    </div>
-	  </div>
-	</form>
-</div>
-
-	<div class="container">
-		<table class="table table-dark">
-		  <thead>
-		    <tr>
-		      <th scope="col">#</th>
-		      <th scope="col">First</th>
-		      <th scope="col">Last</th>
-		      <th scope="col">Handle</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td>Mark</td>
-		      <td>Otto</td>
-		      <td>@mdo</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-		      <td>Jacob</td>
-		      <td>Thornton</td>
-		      <td>@fat</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">3</th>
-		      <td>Larry</td>
-		      <td>the Bird</td>
-		      <td>@twitter</td>
-		    </tr>
-		  </tbody>
-		</table>
+			      Aenean tristique commodo sem vitae facilisis. Sed elementum imperdiet augue sit amet tempus. Nam faucibus viverra ante in eleifend. Praesent id varius ligula. Proin aliquet laoreet pharetra. Fusce ac imperdiet dolor. Morbi gravida nibh non aliquam volutpat. Aenean dignissim auctor elit quis lobortis. Donec congue lectus vel tellus rhoncus, in tincidunt nibh sollicitudin. Sed eget purus nec velit bibendum aliquet. Morbi vel accumsan leo, suscipit porta metus. Fusce urna leo, tempor et faucibus non, vehicula sed libero. Vestibulum pharetra gravida lacus, a blandit velit. Duis eget sodales leo. 
+			    </div>
+			</div>
 	</div>
-
-	<div class="container">
-
-		<div class="row">
-		<div class="col-sm-3">
-			<div class="card card-block" style="width: 18rem;">
-			  <img class="card-img-top" src="..." alt="Card image cap">
-			  <div class="card-body">
-			    <h5 class="card-title">Card title</h5>
-			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			    <a href="#" class="btn btn-primary">Go somewhere</a>
-			  </div>
-			</div>
-		</div>
-
-		<div class="col-sm-3">
-			<div class="card card-block" style="width: 18rem;">
-			  <img class="card-img-top" src="..." alt="Card image cap">
-			  <div class="card-body">
-			    <h5 class="card-title">Card title</h5>
-			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			    <a href="#" class="btn btn-primary">Go somewhere</a>
-			  </div>
-			</div>
-		</div>
-
-		<div class="col-sm-3 card-block">
-			<div class="card" style="width: 18rem;">
-			  <img class="card-img-top" src="..." alt="Card image cap">
-			  <div class="card-body">
-			    <h5 class="card-title">Card title</h5>
-			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			    <a href="#" class="btn btn-primary">Go somewhere</a>
-			  </div>
-			</div>
-		</div>
-
-		<div class="col-sm-3 card-block">
-			<div class="card" style="width: 18rem;">
-			  <img class="card-img-top" src="..." alt="Card image cap">
-			  <div class="card-body">
-			    <h5 class="card-title">Card title</h5>
-			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			    <a href="#" class="btn btn-primary">Go somewhere</a>
-			  </div>
-			</div>
-		</div>
-
-	</div>
-
-</div>
 
 
 
