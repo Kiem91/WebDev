@@ -21,8 +21,7 @@
     		margin-top: 70px;
     	}
     	.jumbotron{
-    		background-image: url("../resources/mountains.jpg");
-    		text-align: center;
+    		background-image: url("../resources/images/mountains.jpg");
 
     	}
     	#email{
@@ -30,7 +29,21 @@
     	}
     	#appSummary{
     		text-align: center;
+    		margin-top: 50px;
+    		margin-bottom: 75px;
     	}
+    	.storeIcon{
+    		width: 250px;
+
+
+    	}
+    	#footer{
+    		background-color: #C2CDD0;
+    		margin-top: 100px;
+    		padding-top: 50px;
+    		text-align: center;
+    	}
+
     </style>
 
     <title>App Landing Page</title>
@@ -49,7 +62,7 @@
 
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
+	      <li class="nav-item">
 	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 	      </li>
 	      <li class="nav-item">
@@ -69,21 +82,29 @@
 	</nav>
 
 
-    <div class="jumbotron">
-    	<div class="container">
-		  <h1 class="display-4">App Landing Page</h1>
-		  <p class="lead">Please download my app</p>
-		  <hr class="my-4">
-		  <p>Want to know more? Join our mailing list!</p>
-		  <form class="form-inline">
-		  	<div class="input-group-prepend">
-		  		<div class="input-group-text">@</div>
-		  	</div>
-		  	<input class="form-control" id="email" type="email" placeholder="Your Email" aria-label="Email">
-		  	<a class="btn btn-primary" href="#" role="button">Sign up</a>
-		  </div>
-		 </div>
-	</div>
+<section id="cover">
+    <div id="cover-caption" class="jumbotron">
+        <div id="container" class="container">
+            <div class="row">
+                <div class="col-sm-10 offset-sm-1 text-center">
+                    <h1 class="display-3">App Landing Page</h1>
+                    <p class="lead">This is why YOU should download this app</p>
+                    <hr class="m-y-2">
+                    <p>Join our mailing list</p>
+                    <div class="info-form">
+                        <form action="" class="form-inline justify-content-center">
+                            <div class="form-group">
+                                <label class="sr-only">Email</label>
+                                <input type="text" class="form-control" placeholder="jane.doe@example.com">
+                            </div>
+                            <button type="submit" class="btn btn-success ">okay, go!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 	<div class="container">
 		<div id="appSummary">
@@ -94,31 +115,39 @@
 		<div class="card-deck">
 
 			<div class="card" style="width: 18rem;">
-			  <img class="card-img-top" src="..\resources\me.jpg" alt="Card image cap">
+			  <img class="card-img-top" src="..\resources\images\me.jpg" alt="Card image cap">
 			  <div class="card-body">
-			    <h5 class="card-title">Card title</h5>
-			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			    <a href="#" class="btn btn-primary">Go somewhere</a>
+				  	
+				    <h5 class="card-title"><i class="fas fa-anchor"></i>App Feature 1</h5>				
+			    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a bibendum magna.</p>
 			  </div>
 			</div>
 			<div class="card" style="width: 18rem;">
-			  <img class="card-img-top" src="..\resources\me.jpg" alt="Card image cap">
+			  <img class="card-img-top" src="..\resources\images\me.jpg" alt="Card image cap">
 			  <div class="card-body">
-			    <h5 class="card-title">Card title</h5>
-			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			    <a href="#" class="btn btn-primary">Go somewhere</a>
+			    <h5 class="card-title"><i class="fas fa-robot"></i>App Feature 2</h5>
+			    <p class="card-text">Aenean molestie lorem felis. Donec vel aliquam dui. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam tortor ante, tempus sit amet mi vel, ornare aliquet nisl. Duis fermentum commodo metus in congue.</p>
 			  </div>
 			</div>
 			<div class="card" style="width: 18rem;">
-			  <img class="card-img-top" src="..\resources\me.jpg" alt="Card image cap">
+			  <img class="card-img-top" src="..\resources\images\me.jpg" alt="Card image cap">
 			  <div class="card-body">
-			    <h5 class="card-title">Card title</h5>
-			    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			    <a href="#" class="btn btn-primary">Go somewhere</a>
+			    <h5 class="card-title"><i class="fas fa-code"></i>App Feature 3</h5>
+			    <p class="card-text">Mauris at venenatis risus. </p>
 			  </div>
 			</div>
 		</div>
 	</div>
+
+	<div id="footer" class="container-fluid">
+			<h2>Download</h2>
+			<p>Here's where you can download the app.</p>
+			<div class="text-center">
+				<a href=""><img class="storeIcon align-self-center mr-3" src="..\\resources\images\google-play-badge.png"></a>
+				<a href=""><img class="storeIcon align-self-center mr-3" src="..\\resources\images\Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"></a>
+			</div>
+	</div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
