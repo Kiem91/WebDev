@@ -14,14 +14,20 @@ function primeCheck($number){
   
 // Driver Code 
 $number = $_GET['number']; 
-$flag = primeCheck($number); 
-if ($flag == 1) 
-    echo "Prime"; 
-else
-    echo "Not Prime"
-?> 
+$flag = primeCheck($number);
 
-?>
+if (is_numeric($number) && $number>0 && $number==round($number,0)) {
+	if ($flag == 1) {
+		echo "<p>".$number." is Prime!</p>"; 
+	}else{
+		echo "<p>".$number." is not Prime!</p>"; 
+	}
+    
+}else{
+	echo "<p>Please enter a positive, whole numeric digit.</p>";
+}
+
+?> 
 
 <div>
 	<p>Is it prime?</p>
