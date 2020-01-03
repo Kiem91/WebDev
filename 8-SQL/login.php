@@ -123,23 +123,23 @@
            {  
                 alert("Name is required");  
            }  
-           if($('#lastName').val() == "")  
+           else if($('#lastName').val() == "")  
            {  
                 alert("Name is required");  
            } 
-           if($('#userName').val() == '')  
+           else if($('#userName').val() == '')  
            {  
                 alert("Username is required");  
            }  
-           if($('#emailAddress').val() == '')  
+           else if($('#emailAddress').val() == '')  
            {  
                 alert("Email address is required");  
            }  
-           if($('#passwordCreate').val() == '')  
+           else if($('#passwordCreate').val() == '')  
            {  
                 alert("Password is required");  
            } 
-           if ($('#passwordCreate') !== $('#passwordConfirm')) {
+           else if ($('#passwordCreate') !== $('#passwordConfirm')) {
            		alert("Passwords entered do not match");
            } 
            else  
