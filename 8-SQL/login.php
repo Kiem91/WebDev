@@ -1,4 +1,32 @@
-<!doctype html>
+<?php
+   include("config.php");
+   session_start();
+   
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+      // username and password sent from form 
+      
+      $myusername = mysqli_real_escape_string($db,$_POST['username']);
+      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
+      
+      $sql = "SELECT email FROM users WHERE email = '$myusername' and password = '$mypassword'";
+      $result = mysqli_query($db,$sql);
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      $active = $row['active'];
+      
+      $count = mysqli_num_rows($result);
+      
+      // If result matched $myusername and $mypassword, table row must be 1 row
+    
+      if($count == 1) {
+         session_register("myusername");
+         $_SESSION['login_user'] = $myusername;
+         
+         header("location: index.php");
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   }
+?>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -13,11 +41,11 @@
   <body>
 
 	<div class="login-form">
-	    <form action="index.php" method="post">
+	    <form action="" method="post">
 	        <h2 class="text-center">Log in</h2>       
 	        <div class="form-group">
-	        	<label for="username">Username/Email address</label>
-	            <input type="text" class="form-control" placeholder="Username/Email" required="required" id=usernameInput name="username">
+	        	<label for="username">Email address</label>
+	            <input type="text" class="form-control" placeholder="Bob.Thomas@gmail.com" required="required" id=usernameInput name="username">
 	        </div>
 	        <div class="form-group">
 	        	<label for="password">Password</label>
@@ -59,19 +87,18 @@
                           <br />  
                           <label>Last Name</label>  
                           <input type="text" name="lastName" id="lastName" class="form-control" />  
-                          <br />  
-                          <label>User Name</label>  
-                          <input type="text" name="userName" id="userName" class="form-control" />  
-                          <br />  
+                          <br />   
                           <label>Email Address</label>  
                           <input type="text" name="emailAddress" id="emailAddress" class="form-control" />  
                           <br />  
                           <label>Password</label>  
                           <input type="password" name="password" id="passwordCreate" class="form-control" />  
-                          <br />  
-                          <label>Confirm Password</label>  
-                          <input type="password" name="password" id="passwordConfirm" class="form-control" />  
-                          <br />  
+                          <br />
+                          <label>User Type</label>
+                          <select class="form-control" name="userType" id="userType">
+                            <option>user</option>
+                            <option>test</option>
+                          </select>>
                           <input type="hidden" name="id" id="id" />  
                           <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />  
                      </form>  
@@ -107,10 +134,10 @@
                 dataType:"json",  
                 success:function(data){  
                      $('#firstName').val(data.firstname);  
-                     $('#lastName').val(data.lastname);  
-                     $('#userName').val(data.username);  
+                     $('#lastName').val(data.lastname);    
                      $('#emailAddress').val(data.email);  
                      $('#passwordCreate').val(data.password);  
+                     $('#userType').val(data.usertype);
                      $('#employee_id').val(data.id);  
                      $('#insert').val("Update");  
                      $('#add_data_Modal').modal('show');  
@@ -126,10 +153,6 @@
            else if($('#lastName').val() == "")  
            {  
                 alert("Name is required");  
-           } 
-           else if($('#userName').val() == '')  
-           {  
-                alert("Username is required");  
            }  
            else if($('#emailAddress').val() == '')  
            {  
