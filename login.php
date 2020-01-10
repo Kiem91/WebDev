@@ -36,79 +36,79 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+   <link rel="stylesheet" type="text/css" href="base.css"/>
+
     <title>Login</title>
   </head>
-  <body>
+  <body id="loginPage">
 
-	<div class="login-form">
-	    <form action="" method="post">
-	        <h2 class="text-center">Log in</h2>       
-	        <div class="form-group">
-	        	<label for="username">Email address</label>
-	            <input type="text" class="form-control" placeholder="Bob.Thomas@gmail.com" required="required" id=usernameInput name="username">
-	        </div>
-	        <div class="form-group">
-	        	<label for="password">Password</label>
-	            <input type="password" class="form-control" placeholder="Password" required="required" id=passwordInput name="password">
-	        </div>
-	        <div class="form-group">
-	            <button type="submit" class="btn btn-primary btn-block">Log in</button>
-	            <button type="button" name="add" id="add" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-success">Register</button>
-	        </div>       
-	    </form>
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <div class="login-form frame">
+            <form action="" method="post">
+              <h2 class="text-center">Log in</h2>       
+                <div class="form-group">
+                  <label for="username">Email address</label>
+                  <input type="text" class="form-control" placeholder="Bob.Thomas@gmail.com" required="required" id=usernameInput name="username">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" placeholder="Password" required="required" id=passwordInput name="password">
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                  <button type="button" name="add" id="registerUserBtn" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-success btn-block">Register</button>
+                  <div><? php echo $error;?></div>
+                </div>
+            </form>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
 
 
- <div id="dataModal" class="modal fade">  
-      <div class="modal-dialog">  
-           <div class="modal-content">  
-                <div class="modal-header">  
-                     <button type="button" class="close" data-dismiss="modal">&times;</button>  
-                     <h4 class="modal-title">User Registration</h4>  
-                </div>  
-                <div class="modal-body" id="user_registration">  
-                </div>  
-                <div class="modal-footer">  
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>  
-                </div>  
-           </div>  
-      </div>  
- </div>  
- <div id="add_data_Modal" class="modal fade">  
-      <div class="modal-dialog">  
-           <div class="modal-content">  
-                <div class="modal-header">  
-                     <button type="button" class="close" data-dismiss="modal">&times;</button>  
-                     <h4 class="modal-title">User Registration</h4>  
-                </div>  
-                <div class="modal-body">  
-                     <form method="post" id="insert_form">  
-                          <label>First Name</label>  
-                          <input type="text" name="firstName" id="firstName" class="form-control" />  
-                          <br />  
-                          <label>Last Name</label>  
-                          <input type="text" name="lastName" id="lastName" class="form-control" />  
-                          <br />   
-                          <label>Email Address</label>  
-                          <input type="text" name="emailAddress" id="emailAddress" class="form-control" />  
-                          <br />  
-                          <label>Password</label>  
-                          <input type="password" name="password" id="passwordCreate" class="form-control" />  
-                          <br />
-                          <label>User Type</label>
-                          <select class="form-control" name="userType" id="userType">
-                            <option>user</option>
-                            <option>test</option>
-                          </select>>
-                          <input type="hidden" name="id" id="id" />  
-                          <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />  
-                     </form>  
-                </div>  
-                <div class="modal-footer">  
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>  
-                </div>  
-           </div>  
-      </div>  
- </div>  
+       <div id="add_data_Modal" class="modal fade">  
+        <div class="modal-dialog">  
+          <div class="modal-content">  
+            <div class="modal-header">   
+            <h4 class="modal-title">User Registration</h4>  
+            </div>  
+              <div class="modal-body">  
+                <form method="post" id="insert_form">  
+                  <label>First Name</label>  
+                  <input type="text" name="firstName" id="firstName" class="form-control" />  
+                  <br />  
+
+                  <label>Last Name</label>  
+                  <input type="text" name="lastName" id="lastName" class="form-control" />  
+                  <br /> 
+
+                  <label>Email Address</label>  
+                  <input type="text" name="emailAddress" id="emailAddress" class="form-control" />  
+                  <br /> 
+
+                  <label>Password</label>  
+                  <input type="password" name="password" id="passwordCreate" class="form-control" />  
+                  <br />
+
+                  <label>User Type</label>
+                  <select class="form-control" name="userType" id="userType">
+                    <option>user</option>
+                    <option>test</option>
+                  </select>
+                  <br />
+
+                  <input type="hidden" name="id" id="id" />  
+                  <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />  
+                </form>  
+              </div>    
+            </div>  
+          </div>  
+        </div>
+      </div>
 
 
     <!-- Optional JavaScript -->
