@@ -8,7 +8,7 @@
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
       
-      $sql = "SELECT email FROM users WHERE email = '$myusername' and password = '$mypassword'";
+      $sql = "SELECT * FROM `Users` WHERE `email` = '$myusername' AND `password` = '$mypassword'";
       $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
@@ -18,7 +18,7 @@
       // If result matched $myusername and $mypassword, table row must be 1 row
     
       if($count == 1) {
-         session_register("myusername");
+         //session_register("$myusername");
          $_SESSION['login_user'] = $myusername;
          
          header("location: index.php");
@@ -35,80 +35,78 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="base.css"/>
 
     <title>Login</title>
   </head>
-  <body>
+  <body id="loginPage">
 
-	<div class="login-form">
-	    <form action="" method="post">
-	        <h2 class="text-center">Log in</h2>       
-	        <div class="form-group">
-	        	<label for="username">Email address</label>
-	            <input type="text" class="form-control" placeholder="Bob.Thomas@gmail.com" required="required" id=usernameInput name="username">
-	        </div>
-	        <div class="form-group">
-	        	<label for="password">Password</label>
-	            <input type="password" class="form-control" placeholder="Password" required="required" id=passwordInput name="password">
-	        </div>
-	        <div class="form-group">
-	            <button type="submit" class="btn btn-primary btn-block">Log in</button>
-	            <button type="button" name="add" id="add" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-success">Register</button>
-	        </div>       
-	    </form>
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <div class="login-form frame">
+            <form action="" method="post">
+              <h2 class="text-center">Log in</h2>       
+                <div class="form-group">
+                  <label for="username">Email address</label>
+                  <input type="text" class="form-control" placeholder="Bob.Thomas@gmail.com" required="required" id=usernameInput name="username">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" placeholder="Password" required="required" id=passwordInput name="password">
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                  <button type="button" name="add" id="registerUserBtn" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-success btn-block">Register</button>
+                </div>
+            </form>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
 
 
- <div id="dataModal" class="modal fade">  
-      <div class="modal-dialog">  
-           <div class="modal-content">  
-                <div class="modal-header">  
-                     <button type="button" class="close" data-dismiss="modal">&times;</button>  
-                     <h4 class="modal-title">User Registration</h4>  
-                </div>  
-                <div class="modal-body" id="user_registration">  
-                </div>  
-                <div class="modal-footer">  
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>  
-                </div>  
-           </div>  
-      </div>  
- </div>  
- <div id="add_data_Modal" class="modal fade">  
-      <div class="modal-dialog">  
-           <div class="modal-content">  
-                <div class="modal-header">  
-                     <button type="button" class="close" data-dismiss="modal">&times;</button>  
-                     <h4 class="modal-title">User Registration</h4>  
-                </div>  
-                <div class="modal-body">  
-                     <form method="post" id="insert_form">  
-                          <label>First Name</label>  
-                          <input type="text" name="firstName" id="firstName" class="form-control" />  
-                          <br />  
-                          <label>Last Name</label>  
-                          <input type="text" name="lastName" id="lastName" class="form-control" />  
-                          <br />   
-                          <label>Email Address</label>  
-                          <input type="text" name="emailAddress" id="emailAddress" class="form-control" />  
-                          <br />  
-                          <label>Password</label>  
-                          <input type="password" name="password" id="passwordCreate" class="form-control" />  
-                          <br />
-                          <label>User Type</label>
-                          <select class="form-control" name="userType" id="userType">
-                            <option>user</option>
-                            <option>test</option>
-                          </select>>
-                          <input type="hidden" name="id" id="id" />  
-                          <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />  
-                     </form>  
-                </div>  
-                <div class="modal-footer">  
-                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>  
-                </div>  
-           </div>  
-      </div>  
- </div>  
+       <div id="add_data_Modal" class="modal fade">  
+        <div class="modal-dialog">  
+          <div class="modal-content">  
+            <div class="modal-header">   
+            <h4 class="modal-title">User Registration</h4>  
+            </div>  
+              <div class="modal-body">  
+                <form method="post" id="insert_form">  
+                  <label>First Name</label>  
+                  <input type="text" name="firstName" id="firstName" class="form-control" />  
+                  <br />  
+
+                  <label>Last Name</label>  
+                  <input type="text" name="lastName" id="lastName" class="form-control" />  
+                  <br /> 
+
+                  <label>Email Address</label>  
+                  <input type="text" name="emailAddress" id="emailAddress" class="form-control" />  
+                  <br /> 
+
+                  <label>Password</label>  
+                  <input type="password" name="password" id="passwordCreate" class="form-control" />  
+                  <br />
+
+                  <label>User Type</label>
+                  <select class="form-control" name="userType" id="userType">
+                    <option>user</option>
+                    <option>test</option>
+                  </select>
+                  <br />
+
+                  <input type="hidden" name="id" id="id" />  
+                  <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />  
+                </form>  
+              </div>    
+            </div>  
+          </div>  
+        </div>
+      </div>
 
 
     <!-- Optional JavaScript -->
@@ -118,87 +116,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-    <script type="text/javascript">
-    	  $(document).ready(function(){  
-      $('#add').click(function(){  
-           $('#insert').val("Insert");  
-           $('#insert_form')[0].reset();  
-      });  
-      $(document).on('click', '.edit_data', function(){  
-           var employee_id = $(this).attr("id");  
-           $.ajax({  
-                url:"fetch.php",  
-                method:"POST",  
-                data:{id:id},  
-                dataType:"json",  
-                success:function(data){  
-                     $('#firstName').val(data.firstname);  
-                     $('#lastName').val(data.lastname);    
-                     $('#emailAddress').val(data.email);  
-                     $('#passwordCreate').val(data.password);  
-                     $('#userType').val(data.usertype);
-                     $('#employee_id').val(data.id);  
-                     $('#insert').val("Update");  
-                     $('#add_data_Modal').modal('show');  
-                }  
-           });  
-      });  
-      $('#insert_form').on("submit", function(event){  
-           event.preventDefault();  
-           if($('#firstName').val() == "")  
-           {  
-                alert("Name is required");  
-           }  
-           else if($('#lastName').val() == "")  
-           {  
-                alert("Name is required");  
-           }  
-           else if($('#emailAddress').val() == '')  
-           {  
-                alert("Email address is required");  
-           }  
-           else if($('#passwordCreate').val() == '')  
-           {  
-                alert("Password is required");  
-           } 
-           else if ($('#passwordCreate') !== $('#passwordConfirm')) {
-           		alert("Passwords entered do not match");
-           } 
-           else  
-           {  
-                $.ajax({  
-                     url:"insert.php",  
-                     method:"POST",  
-                     data:$('#insert_form').serialize(),  
-                     beforeSend:function(){  
-                          $('#insert').val("Inserting");  
-                     },  
-                     success:function(data){  
-                          $('#insert_form')[0].reset();  
-                          $('#add_data_Modal').modal('hide');  
-                          //$('#employee_table').html(data);  
-                     }  
-                });  
-           }  
-      });  
-      $(document).on('click', '.view_data', function(){  
-           var employee_id = $(this).attr("id");  
-           if(employee_id != '')  
-           {  
-                $.ajax({  
-                     url:"select.php",  
-                     method:"POST",  
-                     data:{id:id},  
-                     success:function(data){  
-                          //$('#employee_detail').html(data);  
-                          $('#dataModal').modal('show');  
-                     }  
-                });  
-           }            
-      });  
- });  
-    </script>
 
 
   </body>
