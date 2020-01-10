@@ -18,7 +18,7 @@
       // If result matched $myusername and $mypassword, table row must be 1 row
     
       if($count == 1) {
-         session_register("myusername");
+         //session_register("myusername");
          $_SESSION['login_user'] = $myusername;
          
          header("location: index.php");
@@ -60,7 +60,6 @@
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-block">Log in</button>
                   <button type="button" name="add" id="registerUserBtn" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-success btn-block">Register</button>
-                  <div><? php echo $error;?></div>
                 </div>
             </form>
           </div>
