@@ -8,7 +8,7 @@
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
       
-      $sql = "SELECT email FROM users WHERE email = '$myusername' and password = '$mypassword'";
+      $sql = "SELECT `email` FROM `Users` WHERE `email` = '$myusername' and `password` = '$mypassword'";
       $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
@@ -118,86 +118,7 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <script type="text/javascript">
-    	  $(document).ready(function(){  
-      $('#add').click(function(){  
-           $('#insert').val("Insert");  
-           $('#insert_form')[0].reset();  
-      });  
-      $(document).on('click', '.edit_data', function(){  
-           var employee_id = $(this).attr("id");  
-           $.ajax({  
-                url:"fetch.php",  
-                method:"POST",  
-                data:{id:id},  
-                dataType:"json",  
-                success:function(data){  
-                     $('#firstName').val(data.firstname);  
-                     $('#lastName').val(data.lastname);    
-                     $('#emailAddress').val(data.email);  
-                     $('#passwordCreate').val(data.password);  
-                     $('#userType').val(data.usertype);
-                     $('#employee_id').val(data.id);  
-                     $('#insert').val("Update");  
-                     $('#add_data_Modal').modal('show');  
-                }  
-           });  
-      });  
-      $('#insert_form').on("submit", function(event){  
-           event.preventDefault();  
-           if($('#firstName').val() == "")  
-           {  
-                alert("Name is required");  
-           }  
-           else if($('#lastName').val() == "")  
-           {  
-                alert("Name is required");  
-           }  
-           else if($('#emailAddress').val() == '')  
-           {  
-                alert("Email address is required");  
-           }  
-           else if($('#passwordCreate').val() == '')  
-           {  
-                alert("Password is required");  
-           } 
-           else if ($('#passwordCreate') !== $('#passwordConfirm')) {
-           		alert("Passwords entered do not match");
-           } 
-           else  
-           {  
-                $.ajax({  
-                     url:"insert.php",  
-                     method:"POST",  
-                     data:$('#insert_form').serialize(),  
-                     beforeSend:function(){  
-                          $('#insert').val("Inserting");  
-                     },  
-                     success:function(data){  
-                          $('#insert_form')[0].reset();  
-                          $('#add_data_Modal').modal('hide');  
-                          //$('#employee_table').html(data);  
-                     }  
-                });  
-           }  
-      });  
-      $(document).on('click', '.view_data', function(){  
-           var employee_id = $(this).attr("id");  
-           if(employee_id != '')  
-           {  
-                $.ajax({  
-                     url:"select.php",  
-                     method:"POST",  
-                     data:{id:id},  
-                     success:function(data){  
-                          //$('#employee_detail').html(data);  
-                          $('#dataModal').modal('show');  
-                     }  
-                });  
-           }            
-      });  
- });  
-    </script>
+    	
 
 
   </body>
