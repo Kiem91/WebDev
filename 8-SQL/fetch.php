@@ -2,6 +2,8 @@
  //fetch.php
  define('ROOT_PATH', dirname(__DIR__) . '/');
  include(ROOT_PATH.'config.php');
+
+ echo $conn;
  
 if(isset($_POST["email"]))  
 {
