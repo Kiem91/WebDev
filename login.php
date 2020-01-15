@@ -118,6 +118,25 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function(){  
+          $("#insert_form").submit(function(e){
+            e.preventDefault();
+            $.ajax({
+              url:"8-SQL/fetch.php",
+              method:"POST",
+              data:$("#insert_form").serialize(),
+              dataType:"text",
+              success:function(strMessage){
+                $("#message").text(strMessage);
+                $("#insert_form")[0].reset();
+              }
+            });
+          });
+        }); 
+
+    </script>
+
     	
 
 
