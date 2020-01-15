@@ -142,3 +142,6 @@
 
   </body>
 </html>
+
+
+https://www.derekshidler.com/inserting-form-data-into-mysql-using-php-and-ajax/
