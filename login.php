@@ -69,46 +69,6 @@
     </div>
 
 
-       <div id="add_data_Modal" class="modal fade">  
-        <div class="modal-dialog">  
-          <div class="modal-content">  
-            <div class="modal-header">   
-            <h4 class="modal-title">User Registration</h4>  
-            </div>  
-              <div class="modal-body">  
-                <form method="post" id="insert_form">  
-                  <label>First Name</label>  
-                  <input type="text" name="firstName" id="firstName" class="form-control" />  
-                  <br />  
-
-                  <label>Last Name</label>  
-                  <input type="text" name="lastName" id="lastName" class="form-control" />  
-                  <br /> 
-
-                  <label>Email Address</label>  
-                  <input type="text" name="emailAddress" id="emailAddress" class="form-control" />  
-                  <br /> 
-
-                  <label>Password</label>  
-                  <input type="password" name="password" id="passwordCreate" class="form-control" />  
-                  <br />
-
-                  <label>User Type</label>
-                  <select class="form-control" name="userType" id="userType">
-                    <option>user</option>
-                    <option>test</option>
-                  </select>
-                  <br />
-
-                  <input type="hidden" name="id" id="id" />  
-                  <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />  
-                </form>  
-              </div>    
-            </div>  
-          </div>  
-        </div>
-      </div>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -123,7 +83,7 @@
           $("#insert_form").submit(function(e){
             e.preventDefault();
             $.ajax({
-              url:"8-SQL/fetch.php",
+              url:"8-SQL/insert.php",
               method:"POST",
               data:$("#insert_form").serialize(),
               dataType:"text",

@@ -1,0 +1,111 @@
+<?php
+ include("config.php");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+ if(!empty($_POST)){
+  $output = '';
+  $message = '';
+  $firstName = mysqli_real_escape_string($db, $_POST["firstName"]);
+  $lastName = mysqli_real_escape_string($db, $_POST["lastName"]);
+  $emailAddress = mysqli_real_escape_string($db, $_POST["emailAddress"]);
+  $passwordCreate = mysqli_real_escape_string($db, $_POST["passwordCreate"]);
+  $query = "INSERT INTO `Users`(`FirstName`, `LastName`, `Email`, `Password`) VALUES('$firstName', '$lastName', '$emailAddress', '$passwordCreate');";
+  if($_POST["email"] != ''){
+    if (!preg_match("/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/", $emailAddress)) {
+    $message = "Invaid email address.";
+    }
+
+
+    //Response
+    //Checking to see if name or email already exsist
+    if(mysqli_num_rows($query) > 0) {
+      echo "The name, " . $_POST['name'] . ", or email, " . $_POST['email'] . ", already exists.";
+    }elseif(!mysqli_query($db, $sql)) {
+      echo 'Could not insert';
+    }else {
+      echo "Thank you, " . $_POST['name'] . ". Your information has been inserted.";}$message = 'Data Inserted';
+    }
+    if(mysqli_query($db, $query)){
+      $output .= '<label class="text-success">' . $message . '</label>';
+    }
+    echo $output;
+  }
+?>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Registration</title>
+  </head>
+  <body>
+
+<div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+          <div class="login-form frame">
+            <form action="" method="post">
+              <h2 class="text-center">User Registration</h2>
+              <div class="form-group">
+                  <label for="firstName">Fisrt name</label>
+                  <input type="text" class="form-control" placeholder="Bob" required="required" id=firstName name="firstName">
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last name</label>
+                  <input type="text" class="form-control" placeholder="Thomas" required="required" id=lastName name="lastName">
+                </div>       
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="text" class="form-control" placeholder="Bob.Thomas@gmail.com" required="required" id=email name="email">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" placeholder="Password" required="required" id=password name="password">
+                </div>
+                <div class="form-group">
+                  <button type="button" name="add" id="registerUserBtn" class="btn btn-success btn-block">Register</button>
+                </div>
+            </form>
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    	             $(document).ready(function() {
+                <!--#my-form grabs the form id-->
+                $("#my-form").submit(function(e) {
+                    e.preventDefault();
+                    $.ajax( {
+                        <!--insert.php calls the PHP file-->
+                        url: "insert.php",
+                        method: "post",
+                        data: $("form").serialize(),
+                        dataType: "text",
+                        success: function(strMessage) {
+                            $("#message").text(strMessage);
+                            $("#my-form")[0].reset();
+                        }
+                    });
+                });
+            });
+    </script>
+
+
+  </body>
+</html>
