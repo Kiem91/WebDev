@@ -18,7 +18,7 @@
   <body>
 
   	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="#">Navbar</a>
+	  <a class="navbar-brand" href="index.php">MDAVIS91.TECH</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -28,18 +28,18 @@
 	      <li class="nav-item active">
 	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Link</a>
-	      </li>
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Dropdown
+	          Sections
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Action</a>
-	          <a class="dropdown-item" href="#">Another action</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">Something else here</a>
+	          <a class="dropdown-item" href="1-HTML/index.php">HTML</a>
+	          <a class="dropdown-item" href="2-CSS/index.php">CSS</a>
+	          <a class="dropdown-item" href="3-Javascript/index.php">JavaScript</a>
+	          <a class="dropdown-item" href="4-JQuery/index.php">JQuery</a>
+	          <a class="dropdown-item" href="5-Bootstrap/index.php">Bootstrap 4</a>
+	          <a class="dropdown-item" href="7-PHP/index.php">PHP</a>
+	          <a class="dropdown-item" href="8-SQL/index.php">MySQL</a>
 	        </div>
 	      </li>
 	      <li class="nav-item">
@@ -47,53 +47,117 @@
 	      </li>
 	    </ul>
 	    <form class="form-inline my-2 my-lg-0">
-	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+	      <p></p>Hello <?php echo $userFirstName; ?>!</p>
+	      
 	    </form>
 	  </div>
 	</nav>
 
 
-<div class="album">
-    <div class="container">
-    	<div class="container frame" id="intro">
-    		<h1>Hello World!</h1>
+<div class="jumbotron" id="intro">
+    		<h1>Hello <?php echo $userFirstName; ?>!</h1>
     		<p>intro text</p>
     	</div>
-    	<div class="container frame" id="cards">
-    		<div class="col-md-4">
-    		<div class="card" style="width: 18rem;">
-			  <img class="card-img-top" src="resources\images\HTML5_logo.svg" alt="Card image cap">
-			  <div class="card-body">
-			    <h5 class="card-title">HTML</h5>
-			    <p class="card-text">The foundation of the web</p>
-			    <a href="1-HTML/helloworld.html" class="btn btn-primary">HTML Pages</a>
-			  </div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="card" style="width: 18rem;">
-			  <img class="card-img-top" src="resources\images\CSS3_logo.svg" alt="Card image cap">
-			  <div class="card-body">
-			    <h5 class="card-title">CSS</h5>
-			    <p class="card-text">Making the web beautiful</p>
-			    <a href="2-CSS/index.html" class="btn btn-primary">CSS Pages</a>
-			  </div>
-			</div>
-		</div>
-		<div class="col-md-4">
-			<div class="card" style="width: 18rem;">
-			  <img class="card-img-top" src="resources\images\JavaScript_logo.svg" alt="Card image cap">
-			  <div class="card-body">
-			    <h5 class="card-title">JavaScript</h5>
-			    <p class="card-text">Dynamic functionality</p>
-			    <a href="3-Javascript/index.html" class="btn btn-primary">Go somewhere</a>
-			  </div>
-			</div>
-    	</div>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="resources/images/HTML5_logo.svg">
+                <div class="card-body">
+                  <p class="card-text">HTML - The foundation of the web.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" onclick="window.location.href = '1-HTML/index.html'" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="resources/images/CSS3_logo.svg">
+                <div class="card-body">
+                  <p class="card-text">CSS - Making the web beautiful.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="resources/images/JavaScript_logo.svg">
+                <div class="card-body">
+                  <p class="card-text">JavaScript - Making the web responsive.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="resources/images/jquery_logo.svg">
+                <div class="card-body">
+                  <p class="card-text">JQuery.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="resources/images/Boostrap_logo.svg">
+                <div class="card-body">
+                  <p class="card-text">Bootstrap 4 - Responsive CSS templates for any device.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="resources/images/PHP_logo.svg">
+                <div class="card-body">
+                  <p class="card-text">PHP - Server side scripting.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="resources/images/MySQL_logo.svg">
+                <div class="card-body">
+                  <p class="card-text">MySQL - Databases.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
     </div>
-    </div>
-</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
