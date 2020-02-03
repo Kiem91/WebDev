@@ -3,28 +3,36 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+
+if($_POST["password"]!==$_POST["passwordConfirm"]){
+  $output .='<label class="text-warn">Password and Confirm Password do not match.</label>';
+}
+
  if(!empty($_POST)){
   $output = '';
   $message = '';
   $firstName = mysqli_real_escape_string($db, $_POST["firstName"]);
   $lastName = mysqli_real_escape_string($db, $_POST["lastName"]);
-  $emailAddress = mysqli_real_escape_string($db, $_POST["emailAddress"]);
+  $userName = mysqli_real_escape_string($db, $_POST["username"]);
+
+
+
   $passwordCreate = mysqli_real_escape_string($db, $_POST["passwordCreate"]);
-  $query = "INSERT INTO `Users`(`FirstName`, `LastName`, `Email`, `Password`) VALUES('$firstName', '$lastName', '$emailAddress', '$passwordCreate');";
-  if($_POST["email"] != ''){
+  $query = "INSERT INTO `Users`(`FirstName`, `LastName`, `username`, `Password`) VALUES('$firstName', '$lastName', '$userName', '$passwordCreate');";
+  /*if($_POST["email"] != ''){
     if (!preg_match("/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/", $emailAddress)) {
     $message = "Invaid email address.";
-    }
+    }*/
 
 
     //Response
     //Checking to see if name or email already exsist
     if(mysqli_num_rows($query) > 0) {
-      echo "The name, " . $_POST['name'] . ", or email, " . $_POST['email'] . ", already exists.";
+      $message = "That username, already exists.";
     }elseif(!mysqli_query($db, $sql)) {
-      echo 'Could not insert';
+      $message = 'Could not insert';
     }else {
-      echo "Thank you, " . $_POST['name'] . ". Your information has been inserted.";}$message = 'Data Inserted';
+      $message = "Thank you, " . $_POST['name'] . ". Your information has been inserted.";}$
     }
     if(mysqli_query($db, $query)){
       $output .= '<label class="text-success">' . $message . '</label>';
@@ -61,12 +69,16 @@ ini_set('display_errors', 1);
                   <input type="text" class="form-control" placeholder="Thomas" required="required" id=lastName name="lastName">
                 </div>       
                 <div class="form-group">
-                  <label for="email">Email address</label>
-                  <input type="text" class="form-control" placeholder="Bob.Thomas@gmail.com" required="required" id=email name="email">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" placeholder="Bob.Thomas@gmail.com" required="required" id=username name="username">
                 </div>
                 <div class="form-group">
                   <label for="password">Password</label>
                   <input type="password" class="form-control" placeholder="Password" required="required" id=password name="password">
+                </div>
+                <div class="form-group">
+                  <label for="passwordConfirm">Confirm Password</label>
+                  <input type="password" class="form-control" placeholder="Confirm Password" required="required" id=passwordConfirm name="passwordConfirm">
                 </div>
                 <div class="form-group">
                   <button type="button" name="add" id="registerUserBtn" class="btn btn-success btn-block">Register</button>
