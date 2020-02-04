@@ -4,39 +4,41 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 
-if($_POST["password"]!==$_POST["passwordConfirm"]){
+/*if($_POST["password"]!==$_POST["passwordConfirm"]){
+
   $output .='<label class="text-warn">Password and Confirm Password do not match.</label>';
-}
+}*/
 
  if(!empty($_POST)){
+
   $output = '';
   $message = '';
   $firstName = mysqli_real_escape_string($db, $_POST["firstName"]);
   $lastName = mysqli_real_escape_string($db, $_POST["lastName"]);
   $userName = mysqli_real_escape_string($db, $_POST["username"]);
 
-
-
-  $passwordCreate = mysqli_real_escape_string($db, $_POST["passwordCreate"]);
+  $passwordCreate = mysqli_real_escape_string($db, $_POST["password"]);
   $query = "INSERT INTO `Users`(`FirstName`, `LastName`, `username`, `Password`) VALUES('$firstName', '$lastName', '$userName', '$passwordCreate');";
-  /*if($_POST["email"] != ''){
-    if (!preg_match("/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/", $emailAddress)) {
-    $message = "Invaid email address.";
-    }*/
-
 
     //Response
     //Checking to see if name or email already exsist
-    if(mysqli_num_rows($query) > 0) {
+    if(mysqli_num_rows($query) > 0){
       $message = "That username, already exists.";
-    }elseif(!mysqli_query($db, $sql)) {
+    }elseif(!mysqli_query($db, $sql)){
       $message = 'Could not insert';
-    }else {
-      $message = "Thank you, " . $_POST['name'] . ". Your information has been inserted.";}$
+    }else{
+      $message = "Thank you, " . $_POST['name'] . ". Your information has been inserted.";
+      
+      $salt = md5(mysql_insert_id());
+      $passwordHash = hash('md5',$_POST['password'].$salt );
+
+      $query = "UPDATE `Users` SET `Password` = $passwordHash";
     }
+
     if(mysqli_query($db, $query)){
       $output .= '<label class="text-success">' . $message . '</label>';
     }
+
     echo $output;
   }
 ?>
