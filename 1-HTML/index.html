@@ -12,6 +12,12 @@
 
     <link rel="stylesheet" type="text/css" href="../2-CSS/html.css">
 
+    <script>
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+  }
+</script>
+
 
     <title>HTML Works</title>
   </head>
@@ -61,50 +67,51 @@
 	<div class="container">
 		<div id="accordion">
 			<h3>Section 1.1 - helloworld.html</h3>
-			<div class="container">
-				<iframe src="1.1helloworld.html"></iframe>
+			<div class="container pgContent">
+				<iframe src="1.1helloworld.html" frameborder="0" scrolling="0"></iframe>
 			</div>
 			<h3>Section 1.2 - Headers</h3>
 			<div class="container">
-				<iframe src="1.2headers.html"></iframe>
+				<iframe src="1.2headers.html" frameborder="0" scrolling="no"></iframe>
 			</div>
 			<h3>Section 1.3 - Paragraphs</h3>
 			<div class="container">
-				<iframe src="1.3paragraphs.html"></iframe>
+				<iframe src="1.3paragraphs.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
 			</div>
 			<h3>Section 1.4 - Lists</h3>
 			<div class="container">
-				<iframe src="1.4lists.html"></iframe>
-			</div>
+				<iframe src="1.4lists.html" frameborder="0" scrolling="no"></iframe>
+			</div> 
 			<h3>Section 1.5 - Images</h3>
 			<div class="container">
-				<iframe src="1.5images.html"></iframe>
+				<iframe src="1.5images.html" frameborder="0" scrolling="no"></iframe>
 			</div>
 			<h3>Section 1.6 - Forms</h3>
 			<div class="container">
-				<iframe src="1.6forms.html"></iframe>
+				<iframe src="1.6forms.html" frameborder="0" scrolling="no"></iframe>
 			</div>
 			<h3>Section 1.7 - Tables</h3>
 			<div class="container">
-				<iframe src="1.7tables.html"></iframe>
+				<iframe src="1.7tables.html" frameborder="0" scrolling="no"></iframe>
 			</div>
 			<h3>Section 1.8 Links</h3>
 			<div class="container">
-				<iframe src="1.8links.html"></iframe>
+				<iframe src="1.8links.html" frameborder="0" scrolling="no"></iframe>
 			</div>
 			<h3>Section 1.9 - Entities</h3>
 			<div class="container">
-				<iframe src="1.9entities.html"></iframe>
+				<iframe src="1.9entities.html" frameborder="0" scrolling="no"></iframe>
 			</div>
 			<h3>Section 1.10 IFrames</h3>
 			<div class="container">
-				<iframe src="1.10iframes.html"></iframe>
+				<iframe src="1.10iframes.html" frameborder="0" scrolling="no"></iframe>
 			</div>
 			<h3>Section 1.11 - Final</h3>
-			<div class="container">
-				<iframe src="1.11moon.html"></iframe>
+			<div class="container pgContent">
+				
 			</div>
 		</div>
+		<iframe src="1.11moon.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
 	</div>
 
 
@@ -118,8 +125,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
+
     	$(function(){
-    		$("#accordion").accordion();
+    		$("#accordion").accordion({heightStyle: "fill"});
+    		
     	})
     </script>
 
