@@ -1,16 +1,10 @@
 #badge{
 	width: 128px;
 }
-
-iframe{
-	height:200px;
-	width:100%;
-	border: none;
+#moonVid{
+	width: 192px;
+	height: 192px;
 }
-
-
-
-pgContent{
-	height: 100%;
-
+#indexBody{
+	background-image: url("../resources/images/glitchhill.jpg");
 }

@@ -248,7 +248,7 @@
 			"file": "1-HTML/index.html",
 			"settings":
 			{
-				"buffer_size": 5748,
+				"buffer_size": 5123,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -508,15 +508,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5748,
+						"buffer_size": 5123,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								632,
-								632
+								0,
+								0
 							]
 						],
 						"settings":
