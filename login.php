@@ -8,9 +8,13 @@
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
       
-      $sql = "SELECT `username` FROM `Users` WHERE `username` = '$myusername' and `password` = '$mypassword'";
+      $sql = "SELECT `ID` FROM `Users` WHERE `username` = '$myusername'";
       $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+      if (array_key_exists("ID", $row)) {
+        $hashedPassword = md5(md5($row['ID']).$_POST['password']);
+      }
       $active = $row['active'];
       
       $count = mysqli_num_rows($result);

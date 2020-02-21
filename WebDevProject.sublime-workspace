@@ -4,10 +4,6 @@
 		"selected_items":
 		[
 			[
-				"ali",
-				"align-self\tproperty"
-			],
-			[
 				"pass",
 				"passwordHash"
 			],
@@ -228,27 +224,19 @@
 	"buffers":
 	[
 		{
-			"file": "login.php",
+			"file": "registration.php",
 			"settings":
 			{
-				"buffer_size": 4097,
+				"buffer_size": 5125,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "index.php",
+			"file": "login.php",
 			"settings":
 			{
-				"buffer_size": 7777,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "1-HTML/index.html",
-			"settings":
-			{
-				"buffer_size": 5123,
+				"buffer_size": 4178,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -257,27 +245,7 @@
 			"file": "2-CSS/html.css",
 			"settings":
 			{
-				"buffer_size": 110,
-				"encoding": "UTF-8",
-				"line_ending": "Windows",
-				"name": "iframe{"
-			}
-		},
-		{
-			"file": "1-HTML/1.5images.html",
-			"settings":
-			{
-				"buffer_size": 776,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "1-HTML/1.3paragraphs.html",
-			"settings":
-			{
-				"buffer_size": 626,
-				"encoding": "UTF-8",
+				"buffer_size": 143,
 				"line_ending": "Windows"
 			}
 		}
@@ -294,15 +262,11 @@
 		"selected_items":
 		[
 			[
-				"Snippet: ",
-				"Snippet: Lorem ipsum"
-			],
-			[
-				"snip",
+				"boot",
 				"Snippet: bootstrapTemplate"
 			],
 			[
-				"boot",
+				"Snippet: ",
 				"Snippet: bootstrapTemplate"
 			],
 			[
@@ -342,16 +306,16 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/davism5/Desktop/WebDev"
+		"/C/Users/davism5/Desktop/WebDev",
+		"/C/Users/davism5/Desktop/WebDev/2-CSS"
 	],
 	"file_history":
 	[
-		"/C/Users/davism5/Desktop/WebDev/1-HTML/1.1helloworld.html",
-		"/C/Users/davism5/Desktop/WebDev/base.css",
-		"/C/Users/davism5/Desktop/WebDev/1-HTML/iframes.html",
-		"/C/Users/davism5/AppData/Roaming/Sublime Text 3/Packages/User/bootstrapTemplate.sublime-snippet",
+		"/C/Users/davism5/AppData/Roaming/Sublime Merge/Local/Session.sublime_session",
 		"/C/Users/davism5/Desktop/WebDev/registration.php",
 		"/C/Users/davism5/Desktop/WebDev/test.html",
+		"/C/Users/davism5/AppData/Roaming/Sublime Text 3/Packages/User/bootstrapTemplate.sublime-snippet",
+		"/C/Users/davism5/Desktop/WebDev/base.css",
 		"/C/Users/davism5/Desktop/WebDev/2-CSS/example.css",
 		"/C/Users/davism5/Desktop/WebDev/1-HTML/index.html",
 		"/C/Users/davism5/Desktop/WebDev/index.php",
@@ -405,8 +369,6 @@
 		"height": 102.927835052,
 		"where_history":
 		[
-			"<current file>",
-			""
 		]
 	},
 	"find_state":
@@ -414,7 +376,6 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"button"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -422,7 +383,6 @@
 		"regex": true,
 		"replace_history":
 		[
-			"p"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -430,25 +390,49 @@
 		"whole_word": false,
 		"wrap": true
 	},
-	"folders":
-	[
-		{
-			"path": "C:\\Users\\davism5\\Desktop\\WebDev"
-		}
-	],
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "registration.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1276,
+								1276
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
 					"file": "login.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4097,
+						"buffer_size": 4178,
 						"regions":
 						{
 						},
@@ -469,46 +453,22 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7777,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2458,
-								2336
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 828.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
 				{
 					"buffer": 2,
-					"file": "1-HTML/index.html",
+					"file": "2-CSS/html.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5123,
+						"buffer_size": 143,
 						"regions":
 						{
 						},
@@ -521,107 +481,13 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 1,
-			"sheets":
-			[
-				{
-					"buffer": 3,
-					"file": "2-CSS/html.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 110,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								80,
-								80
-							]
-						],
-						"settings":
-						{
-							"auto_name": "iframe{",
 							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "1-HTML/1.5images.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 776,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								85,
-								85
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "1-HTML/1.3paragraphs.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 626,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								124,
-								124
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -670,7 +536,7 @@
 		"height": 0.0
 	},
 	"pinned_build_system": "",
-	"project": "",
+	"project": "WebDevProject.sublime-project",
 	"replace":
 	{
 		"height": 50.0
@@ -703,7 +569,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},

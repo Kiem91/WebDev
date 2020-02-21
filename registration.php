@@ -3,12 +3,6 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-
-/*if($_POST["password"]!==$_POST["passwordConfirm"]){
-
-  $output .='<label class="text-warn">Password and Confirm Password do not match.</label>';
-}*/
-
  if(!empty($_POST)){
 
   $output = '';
@@ -26,19 +20,20 @@ ini_set('display_errors', 1);
       $message = "That username, already exists.";
     }elseif(!mysqli_query($db, $sql)){
       $message = 'Could not insert';
-    }else{
+    }elseif(mysqli_query($db, $query)){
+      mysqli_query($db, $query);
+
       $message = "Thank you, " . $_POST['name'] . ". Your information has been inserted.";
       
       $salt = md5(mysql_insert_id());
       $passwordHash = hash('md5',$_POST['password'].$salt );
-
       $query = "UPDATE `Users` SET `Password` = $passwordHash";
-    }
 
-    if(mysqli_query($db, $query)){
+      mysqli_query($db, $query);
       $output .= '<label class="text-success">' . $message . '</label>';
-    }
 
+      header("location: login.php");
+    }
     echo $output;
   }
 ?>
