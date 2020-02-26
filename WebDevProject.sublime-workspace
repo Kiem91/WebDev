@@ -227,7 +227,7 @@
 			"file": "registration.php",
 			"settings":
 			{
-				"buffer_size": 5125,
+				"buffer_size": 4602,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -236,7 +236,7 @@
 			"file": "login.php",
 			"settings":
 			{
-				"buffer_size": 4178,
+				"buffer_size": 3367,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -393,7 +393,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -402,15 +402,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5125,
+						"buffer_size": 4602,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1276,
-								1276
+								3793,
+								3793
 							]
 						],
 						"settings":
@@ -420,37 +420,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "login.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4178,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								584,
-								584
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1187.62886598,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -462,6 +432,36 @@
 			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 1,
+					"file": "login.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3367,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2564,
+								2525
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 971.87628866,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
 				{
 					"buffer": 2,
 					"file": "2-CSS/html.css",
@@ -521,7 +521,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.577430972389,
 			1.0
 		],
 		"rows":
@@ -577,7 +577,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 251.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

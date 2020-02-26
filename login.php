@@ -1,35 +1,30 @@
 <?php
-   include("config.php");
-   session_start();
+include("config.php");
+session_start();
+$error = '';
    
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
-      
-      $myusername = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
-      
-      $sql = "SELECT `ID` FROM `Users` WHERE `username` = '$myusername'";
-      $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+  // username sent from form 
+  $myusername = mysqli_real_escape_string($db,$_POST['username']);
+  //get user from database
+  $sql = "SELECT `ID` FROM `Users` WHERE `username` = '$myusername'";
+  $result = mysqli_query($db,$sql);
 
-      if (array_key_exists("ID", $row)) {
-        $hashedPassword = md5(md5($row['ID']).$_POST['password']);
-      }
-      $active = $row['active'];
-      
-      $count = mysqli_num_rows($result);
-      
-      // If result matched $myusername and $mypassword, table row must be 1 row
-    
-      if($count == 1) {
-         //session_register("myusername");
-         $_SESSION['login_user'] = $myusername;
-         
-         header("location: index.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
-      }
-   }
+  //number of users with submitted username
+  $count = mysqli_num_rows($result);
+
+  if ($count == 1) {
+    //get user variables
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+    if (array_key_exists("ID", $row)) {
+      $hashedPassword = md5(md5($row['ID']).$_POST['password']);
+    if ($hashedPassword == $row['Password']) {
+      $_SESSION['login_user'] = $myusername;
+      header("location: index.php");
+    }else{$error = "Your Login Name or Password is invalid";}}
+  }
+}
 ?>
 <html lang="en">
   <head>
@@ -63,7 +58,7 @@
                 </div>
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-block">Log in</button>
-                  <button type="button" name="add" id="registerUserBtn" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-success btn-block">Register</button>
+                  <button type="button" id="registerUserBtn" data-toggle="modal" class="btn btn-success btn-block" onclick="window.location.href = 'registration.php';">Register</button>
                 </div>
             </form>
             <div id=error><?php echo $error?></div>
@@ -83,30 +78,5 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function(){  
-          $("#insert_form").submit(function(e){
-            e.preventDefault();
-            $.ajax({
-              url:"8-SQL/insert.php",
-              method:"POST",
-              data:$("#insert_form").serialize(),
-              dataType:"text",
-              success:function(strMessage){
-                $("#message").text(strMessage);
-                $("#insert_form")[0].reset();
-              }
-            });
-          });
-        }); 
-
-    </script>
-
-    	
-
-
   </body>
 </html>
-
-
-https://www.derekshidler.com/inserting-form-data-into-mysql-using-php-and-ajax/

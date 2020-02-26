@@ -12,26 +12,32 @@ ini_set('display_errors', 1);
   $userName = mysqli_real_escape_string($db, $_POST["username"]);
 
   $passwordCreate = mysqli_real_escape_string($db, $_POST["password"]);
+  
   $query = "INSERT INTO `Users`(`FirstName`, `LastName`, `username`, `Password`) VALUES('$firstName', '$lastName', '$userName', '$passwordCreate');";
+  
 
     //Response
     //Checking to see if name or email already exsist
-    if(mysqli_num_rows($query) > 0){
-      $message = "That username, already exists.";
-    }elseif(!mysqli_query($db, $sql)){
+    $check = "SELECT `username` FROM `Users` WHERE `username` = '$userName'; ";
+    if(mysqli_query($db,$check)){
+      $message = 'That username, already exists.';
+    }elseif(!mysqli_query($db, $query)){
       $message = 'Could not insert';
     }elseif(mysqli_query($db, $query)){
+      //Insert data into database
       mysqli_query($db, $query);
 
       $message = "Thank you, " . $_POST['name'] . ". Your information has been inserted.";
       
+      //salt and update password
       $salt = md5(mysql_insert_id());
       $passwordHash = hash('md5',$_POST['password'].$salt );
-      $query = "UPDATE `Users` SET `Password` = $passwordHash";
+      $query = "UPDATE `Users` SET `Password` = '$passwordHash' ";
 
       mysqli_query($db, $query);
       $output .= '<label class="text-success">' . $message . '</label>';
 
+      //redirect user to login page
       header("location: login.php");
     }
     echo $output;
@@ -78,9 +84,10 @@ ini_set('display_errors', 1);
                   <input type="password" class="form-control" placeholder="Confirm Password" required="required" id=passwordConfirm name="passwordConfirm">
                 </div>
                 <div class="form-group">
-                  <button type="button" name="add" id="registerUserBtn" class="btn btn-success btn-block">Register</button>
+                  <button type="submit" name="add" id="registerUserBtn" class="btn btn-success btn-block">Register</button>
                 </div>
             </form>
+            <div id=error><?php echo $output?></div>
           </div>
         </div>
         <div class="col"></div>
@@ -94,27 +101,6 @@ ini_set('display_errors', 1);
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-    <script type="text/javascript">
-    	             $(document).ready(function() {
-                <!--#my-form grabs the form id-->
-                $("#my-form").submit(function(e) {
-                    e.preventDefault();
-                    $.ajax( {
-                        <!--insert.php calls the PHP file-->
-                        url: "insert.php",
-                        method: "post",
-                        data: $("form").serialize(),
-                        dataType: "text",
-                        success: function(strMessage) {
-                            $("#message").text(strMessage);
-                            $("#my-form")[0].reset();
-                        }
-                    });
-                });
-            });
-    </script>
-
 
   </body>
 </html>
