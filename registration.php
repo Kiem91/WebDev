@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
- if(!empty($_POST)){
+ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
   $output = '';
   $message = '';
@@ -41,6 +41,8 @@ ini_set('display_errors', 1);
       header("location: login.php");
     }
     echo $output;
+  }else{
+    header("location: test.html");
   }
 ?>
 <html lang="en">
@@ -64,7 +66,7 @@ ini_set('display_errors', 1);
             <form action="" method="post">
               <h2 class="text-center">User Registration</h2>
               <div class="form-group">
-                  <label for="firstName">Fisrt name</label>
+                  <label for="firstName">First name</label>
                   <input type="text" class="form-control" placeholder="Bob" required="required" id=firstName name="firstName">
                 </div>
                 <div class="form-group">
@@ -84,7 +86,7 @@ ini_set('display_errors', 1);
                   <input type="password" class="form-control" placeholder="Confirm Password" required="required" id=passwordConfirm name="passwordConfirm">
                 </div>
                 <div class="form-group">
-                  <button type="submit" name="add" id="registerUserBtn" class="btn btn-success btn-block">Register</button>
+                  <button type="submit" name="add" class="btn btn-success btn-block">Register</button>
                 </div>
             </form>
             <div id=error><?php echo $output?></div>
