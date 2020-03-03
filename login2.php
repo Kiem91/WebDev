@@ -1,7 +1,5 @@
 <?php
-
 //electric boogaloo
-
 include("config.php");
 session_start();
 error_reporting(E_ALL);
@@ -40,25 +38,44 @@ if (!is_null($_POST)) {
 
       //Salt and Update Password
       $salt = md5(mysqli_insert_id($db));
-      $passwordHash = hash('md5',$_POST['password'].$salt );
+      $saltedPass = $salt.$_POST['password'];
+      $passwordHash = hash($saltedPass, PASSWORD_BCRYPT);
       $query = "UPDATE `Users` SET `Password` = '$passwordHash' ";
 
       mysqli_query($db, $query);
 
       $output = "Registration successful";
     }
-  }else{
-    $output = "registration failure";
   }
 
+  if ($_POST['registration']==0) {
+    $query = "SELECT `*` FROM `Users` WHERE `username` = '".mysqli_real_escape_string($db, $_POST['username'])."' LIMIT 1";
+
+    $row = mysqli_fetch_array(mysqli_query($db, $query), MYSQLI_ASSOC);
+    if (array_key_exists('UserID', $row)) {
+      $salt = md5($row['UserID']);
+      $saltedPass = $salt.$_POST['password'];
+      $hashedPassword = hash($saltedPass, PASSWORD_BCRYPT);
+      if ($hashedPassword == $row['Password']) {
+        $_SESSION['login_user'] = $userName;
+        header("location: index.php");
+        
+      }else{
+        $message = "Invalid password";
+      }
+    }else{
+      $message = "Invalid username";
+    }
+  }
+
+}else{
+  $output = "no post";
 }
-
-$output = "no post";
-
 ?>
 
 <form method="post">
   <h2 class="text-center">User Registration</h2>
+  <div id=error><?php echo $output ?></div>
   <div class="form-group">
     <label for="firstName">First name</label>
     <input type="text" class="form-control" placeholder="Bob" required="required" id=firstName name="firstName">
@@ -85,11 +102,11 @@ $output = "no post";
   </div>
 </form>
 
-<div id=error><?php echo $output?></div>
 
 
 <form method="post">
   <h2 class="text-center">Log in</h2>
+  <div id=error><?php echo $message ?></div>
   <div class="form-group">
     <label for="username">Username</label>
     <input type="text" class="form-control" placeholder="Bob.Thomas@gmail.com" required="required" id=usernameInput name="username">

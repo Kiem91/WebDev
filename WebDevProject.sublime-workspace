@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"sal",
+				"saltedPass"
+			],
+			[
+				"Password",
+				"Password"
+			],
+			[
+				"row",
+				"row"
+			],
+			[
 				"mysqli",
 				"mysqli_query"
 			],
@@ -271,13 +283,19 @@
 			}
 		},
 		{
-			"contents": "<?php\n\n//electric boogaloo\n\ninclude(\"config.php\");\nsession_start();\nerror_reporting(E_ALL);\nini_set('display_errors', 1);\n\n$output = '';\n$message = '';\n\nif (!is_null($_POST)) {\n\n  //database connection test\n  if (!is_null($conn)) {\n    $output=$conn;\n    //die(\"datbase connection error\");\n  }\n\n  //Form validation, check if form is blank\n\n  //Register\n  if ($_POST['registration']==1) {\n    $query = \"SELECT `UserID` FROM `Users` WHERE `username` = '\".mysqli_real_escape_string($db, $_POST['username']).\"' LIMIT 1\";\n    $result = mysqli_query($db, $query);\n\n    if (mysqli_num_rows($result) > 0) {\n      $message = \"That username is already taken.\";\n    }else{\n\n      $firstName = mysqli_real_escape_string($db, $_POST[\"firstName\"]);\n      $lastName = mysqli_real_escape_string($db, $_POST[\"lastName\"]);\n      $userName = mysqli_real_escape_string($db, $_POST[\"username\"]);\n      $passwordCreate = mysqli_real_escape_string($db, $_POST[\"password\"]);\n\n      $query = \"INSERT INTO `Users` (`FirstName`, `LastName`, `username`, `Password`) VALUES ('$firstName', '$lastName', '$userName', '$passwordCreate');\";\n\n      mysqli_query($db, $query);\n\n      //Salt and Update Password\n      $salt = md5(mysql_insert_id());\n      $passwordHash = hash('md5',$_POST['password'].$salt );\n      $query = \"UPDATE `Users` SET `Password` = '$passwordHash' \";\n\n      mysqli_query($db, $query);\n\n      $output = \"Registration successful\";\n    }\n  }else{\n    $output = \"registration failure\";\n  }\n\n}\n\n$output = \"no post\";\n\n?>\n\n<form method=\"post\">\n  <h2 class=\"text-center\">User Registration</h2>\n  <div class=\"form-group\">\n    <label for=\"firstName\">First name</label>\n    <input type=\"text\" class=\"form-control\" placeholder=\"Bob\" required=\"required\" id=firstName name=\"firstName\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"lastName\">Last name</label>\n    <input type=\"text\" class=\"form-control\" placeholder=\"Thomas\" required=\"required\" id=lastName name=\"lastName\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"username\">Username</label>\n    <input type=\"text\" class=\"form-control\" placeholder=\"bthomas\" required=\"required\" id=username name=\"username\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"password\">Password</label>\n    <input type=\"password\" class=\"form-control\" placeholder=\"Password\" required=\"required\" id=password name=\"password\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"passwordConfirm\">Confirm Password</label>\n    <input type=\"password\" class=\"form-control\" placeholder=\"Confirm Password\" required=\"required\" id=passwordConfirm name=\"passwordConfirm\">\n  </div>\n  <input type=\"hidden\" name=\"registration\" value=\"1\">\n  <div class=\"form-group\">\n    <button type=\"submit\" name=\"add\" class=\"btn btn-success btn-block\">Register</button>\n  </div>\n</form>\n\n<div id=error><?php echo $output?></div>\n\n\n<form method=\"post\">\n  <h2 class=\"text-center\">Log in</h2>\n  <div class=\"form-group\">\n    <label for=\"username\">Username</label>\n    <input type=\"text\" class=\"form-control\" placeholder=\"Bob.Thomas@gmail.com\" required=\"required\" id=usernameInput name=\"username\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"password\">Password</label>\n    <input type=\"password\" class=\"form-control\" placeholder=\"Password\" required=\"required\" id=passwordInput name=\"password\">\n  </div>\n  <input type=\"hidden\" name=\"registration\" value=\"0\">\n  <div class=\"form-group\">\n    <button type=\"submit\" class=\"btn btn-primary btn-block\">Log in</button>\n  </div>\n</form>",
 			"file": "login2.php",
-			"file_size": 3519,
-			"file_write_time": 132276554735641071,
 			"settings":
 			{
-				"buffer_size": 3474,
+				"buffer_size": 4211,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "session.php",
+			"settings":
+			{
+				"buffer_size": 417,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -421,6 +439,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			">"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -468,7 +487,7 @@
 						"translation.y": 54.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -484,8 +503,8 @@
 						"selection":
 						[
 							[
-								1589,
-								1589
+								623,
+								565
 							]
 						],
 						"settings":
@@ -525,7 +544,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 594.0,
+						"translation.y": 2537.69072165,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -558,7 +577,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -573,15 +592,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3474,
+						"buffer_size": 4211,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								257,
-								257
+								0,
+								4211
 							]
 						],
 						"settings":
@@ -591,7 +610,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 54.4329896907,
+						"translation.y": 378.06185567,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -599,6 +618,36 @@
 				},
 				{
 					"buffer": 5,
+					"file": "session.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 417,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								417,
+								417
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"file": "2-CSS/html.css",
 					"semi_transient": false,
 					"settings":
@@ -622,7 +671,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]

@@ -4,16 +4,15 @@
    
    $user_check = $_SESSION['login_user'];
    
-   $ses_sql = mysqli_query($db,"select * from `Users` where `email` = '$user_check' ");
+   $ses_sql = mysqli_query($db,"select * from `Users` where `username` = '$user_check' ");
    
-   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+   $row = mysqli_fetch_array($ses_sql, MYSQLI_ASSOC);
    
    $userFirstName = $row['FirstName'];
    $userLastName = $row['LastName'];
 
 
    if(!isset($_SESSION['login_user'])){
-      header("location:login.php");
-      die();
+      header("location:login2.php");
    }
 ?>
