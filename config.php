@@ -8,7 +8,7 @@
    $conn = ' ';
 
    if (!$db) {
-   	$conn = 'Database connection error';
+   	$conn = mysqli_connect_error();
    }else{
    	$conn = 'Database connection successful';
    }
