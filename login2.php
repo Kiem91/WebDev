@@ -24,7 +24,7 @@ if (!is_null($_POST)) {
     $result = mysqli_query($db, $query);
 
     if (mysqli_num_rows($result) > 0) {
-      $message = "That username is already taken.";
+      $output = "That username is already taken.";
     }else{
 
       $firstName = mysqli_real_escape_string($db, $_POST["firstName"]);
@@ -32,15 +32,15 @@ if (!is_null($_POST)) {
       $userName = mysqli_real_escape_string($db, $_POST["username"]);
       $passwordCreate = mysqli_real_escape_string($db, $_POST["password"]);
 
-      $query = "INSERT INTO `Users` (`FirstName`, `LastName`, `username`, `Password`) VALUES ('$firstName', '$lastName', '$userName', '$passwordCreate');";
+      $query = "INSERT INTO `Users` (`FirstName`, `LastName`, `username`, `Password`, `Type`) VALUES ('$firstName', '$lastName', '$userName', '$passwordCreate', 'User');";
 
       mysqli_query($db, $query);
 
       //Salt and Update Password
       $salt = md5(mysqli_insert_id($db));
       $saltedPass = $salt.$_POST['password'];
-      $passwordHash = hash($saltedPass, PASSWORD_BCRYPT);
-      $query = "UPDATE `Users` SET `Password` = '$passwordHash' ";
+      $passwordHash = md5($saltedPass);
+      $query = "UPDATE `Users` SET `Password` = '$passwordHash' WHERE `username` = '$userName' ";
 
       mysqli_query($db, $query);
 
@@ -48,23 +48,29 @@ if (!is_null($_POST)) {
     }
   }
 
+//Login
   if ($_POST['registration']==0) {
-    $query = "SELECT `*` FROM `Users` WHERE `username` = '".mysqli_real_escape_string($db, $_POST['username'])."' LIMIT 1";
+    $search = mysqli_real_escape_string($db, $_POST['username']);
+    $query = "SELECT `UserID`, `username`, `Password` FROM `Users` WHERE `username` = '$search' LIMIT 1";
 
+    
     $row = mysqli_fetch_array(mysqli_query($db, $query), MYSQLI_ASSOC);
-    if (array_key_exists('UserID', $row)) {
+    if (array_key_exists("username", $row)) {
+
+      //Get ID and reverse engineer hash
       $salt = md5($row['UserID']);
       $saltedPass = $salt.$_POST['password'];
-      $hashedPassword = hash($saltedPass, PASSWORD_BCRYPT);
+      $hashedPassword = md5($saltedPass);
+
       if ($hashedPassword == $row['Password']) {
-        $_SESSION['login_user'] = $userName;
-        header("location: index.php");
-        
+        //Login should be successful, set session variable and redirect to home page.
+        $_SESSION['login_user'] = $search;
+        header("location: index.php");  
       }else{
         $message = "Invalid password";
       }
     }else{
-      $message = "Invalid username";
+      $message = "Invalid username.";
     }
   }
 
@@ -106,7 +112,7 @@ if (!is_null($_POST)) {
 
 <form method="post">
   <h2 class="text-center">Log in</h2>
-  <div id=error><?php echo $message ?></div>
+  
   <div class="form-group">
     <label for="username">Username</label>
     <input type="text" class="form-control" placeholder="Bob.Thomas@gmail.com" required="required" id=usernameInput name="username">
@@ -119,4 +125,5 @@ if (!is_null($_POST)) {
   <div class="form-group">
     <button type="submit" class="btn btn-primary btn-block">Log in</button>
   </div>
+  <div id=error><?php echo $message ?></div>
 </form>
