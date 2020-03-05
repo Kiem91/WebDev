@@ -1,1 +1,91 @@
-broken
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login & Registration</title>
+	    <!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	    <link rel="stylesheet" type="text/css" href="base.css"/>
+	</head>
+
+	<body id="LoginBody">
+
+		<div id="shell" class="container">
+			<div class="row">
+				<div class="col"></div>
+				<div class="col-6">
+					<div id="RegContainer" class="container">
+						<form method="post">
+						  <h2 class="text-center">User Registration</h2>
+						  <div id=error><?php echo $output ?></div>
+						  <div class="form-group">
+						    <label for="firstName">First name</label>
+						    <input type="text" class="form-control" placeholder="Bob" required="required" id=firstName name="firstName">
+						  </div>
+						  <div class="form-group">
+						    <label for="lastName">Last name</label>
+						    <input type="text" class="form-control" placeholder="Thomas" required="required" id=lastName name="lastName">
+						  </div>
+						  <div class="form-group">
+						    <label for="username">Username</label>
+						    <input type="text" class="form-control" placeholder="bthomas" required="required" id=username name="username">
+						  </div>
+						  <div class="form-group">
+						    <label for="password">Password</label>
+						    <input type="password" class="form-control" placeholder="Password" required="required" id=password name="password">
+						  </div>
+						  <div class="form-group">
+						    <label for="passwordConfirm">Confirm Password</label>
+						    <input type="password" class="form-control" placeholder="Confirm Password" required="required" id=passwordConfirm name="passwordConfirm">
+						  </div>
+						  <input type="hidden" name="registration" value="1">
+						  <div class="form-group">
+						    <button type="submit" name="add" class="btn btn-success btn-block">Register</button>
+						  </div>
+						</form>
+					</div>
+
+					<div id="LoginContainer" class="container">
+						<form method="post">
+						  <h2 class="text-center">Log in</h2>
+						  
+						  <div class="form-group">
+						    <label for="username">Username</label>
+						    <input type="text" class="form-control" placeholder="Bob.Thomas@gmail.com" required="required" id=usernameInput name="username">
+						  </div>
+						  <div class="form-group">
+						    <label for="password">Password</label>
+						    <input type="password" class="form-control" placeholder="Password" required="required" id=passwordInput name="password">
+						  </div>
+						  <input type="hidden" name="registration" value="0">
+						  <div class="form-group">
+						    <button type="submit" class="btn btn-primary btn-block">Log in</button>
+						  </div>
+						  <div id=error><?php echo $message ?></div>
+						</form>
+					</div>
+				</div>
+				<div class="col"></div>
+			</div>
+		</div>
+
+
+	    <!-- Optional JavaScript -->
+	    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+	    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	    <script type="text/javascript">
+	    	 Custom Script
+	    </script>
+
+	</body>
+
+</html>

@@ -48,7 +48,7 @@ if (!is_null($_POST)) {
     }
   }
 
-//Login
+  //Login
   if ($_POST['registration']==0) {
     $search = mysqli_real_escape_string($db, $_POST['username']);
     $query = "SELECT `UserID`, `username`, `Password` FROM `Users` WHERE `username` = '$search' LIMIT 1";
