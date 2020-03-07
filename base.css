@@ -1,7 +1,7 @@
 	body {
         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
-    #loginPage{
+    #LoginBody{
         background-image: url("resources/images/eclipse.jpg");
     }
 	.frame {
