@@ -18,7 +18,7 @@
 			<div class="row">
 				<div class="col-6">
 					<div id="RegContainer" class="container frame">
-						<form method="post">
+						<form name="registerForm" onsubmit="return(registrationValidation());" method="post">
 						  <h2 class="text-center">User Registration</h2>
 						  <div id=error><?php echo $output ?></div>
 						  <div class="form-group">
@@ -50,7 +50,7 @@
 				</div>
 				<div class="col-6">
 					<div id="LoginContainer" class="container frame">
-						<form method="post">
+						<form name="loginForm" onsubmit="return(loginValidation());" method="post">
 						  <h2 class="text-center">Log in</h2>
 						  
 						  <div class="form-group">
@@ -82,7 +82,48 @@
 	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 	    <script type="text/javascript">
-	    	 Custom Script
+	    	 //register form validation
+	    	 function registrationValidation() {
+	    	 	if(document.registerForm.firstName.value == ""){
+					alert( "Please provide your name!" );
+					document.registerForm.firstName.focus() ;
+					return false;
+				}
+				if(document.registerForm.lastName.value == ""){
+					alert( "Please provide your name!" );
+					document.registerForm.lastName.focus() ;
+					return false;
+				}
+				if(document.registerForm.username.value == ""){
+					alert( "Please choose a username." );
+					document.registerForm.username.focus() ;
+					return false;
+				}
+				if(document.registerForm.password.value == ""){
+					alert( "Please provide a password" );
+					document.registerForm.password.focus() ;
+					return false;
+				}
+				if(document.registerForm.passwordConfirm.value == ""){
+					alert( "Please confirm your password" );
+					document.registerForm.passwordConfirm.focus() ;
+					return false;
+				}
+				if(document.registerForm.passwordConfirm.value != document.registerForm.password.value){
+					alert( "The passwords you entered do not match." );
+					document.registerForm.password.focus() ;
+					return false;
+				}
+	    	 }
+
+	    	 //login form validation
+	    	 function loginValidation() {
+	    	 	if((document.loginForm.username.value == "")||(document.loginForm.password.value == "")){
+					alert( "Invalid username or password" );
+					document.loginForm.username.focus() ;
+					return false;
+				}
+	    	 }
 	    </script>
 
 	</body>

@@ -2,7 +2,7 @@
         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     #LoginBody{
-        background-image: url("resources/images/eclipse.jpg");
+        background-image: url("/resources/images/eclipse.jpg");
     }
 	.frame {
         padding: 10px 10px 10px 10px;
