@@ -67,10 +67,10 @@ if (!is_null($_POST)) {
         $_SESSION['login_user'] = $search;
         header("location: index.php");  
       }else{
-        $message = "Invalid password";
+        $message = "Invalid username or password.";
       }
     }else{
-      $message = "Invalid username.";
+      $message = "Invalid username or password.";
     }
   }
 

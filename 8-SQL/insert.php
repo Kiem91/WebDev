@@ -1,6 +1,7 @@
-<?php  
- define('ROOT_PATH', dirname(__DIR__) . '/');
- include(ROOT_PATH.'config.php');
+<?php
+ include("config.php");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
  if(!empty($_POST)){
   $output = '';

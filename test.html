@@ -1,131 +1,214 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Login & Registration</title>
-	    <!-- Required meta tags -->
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	    <!-- Bootstrap CSS -->
-	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-	    <link rel="stylesheet" type="text/css" href="base.css"/>
-	</head>
+    <link rel="stylesheet" type="text/css" href="base.css"/>
 
-	<body id="LoginBody">
+    <title>Home Page</title>
+  </head>
+  <body id="mainBody">
 
-		<div id="shell" class="container">
-			<div class="row">
-				<div class="col-6">
-					<div id="RegContainer" class="container frame">
-						<form name="registerForm" onsubmit="return(registrationValidation());" method="post">
-						  <h2 class="text-center">User Registration</h2>
-						  <div id=error><?php echo $output ?></div>
-						  <div class="form-group">
-						    <label for="firstName">First name</label>
-						    <input type="text" class="form-control" placeholder="Bob" required="required" id=firstName name="firstName">
-						  </div>
-						  <div class="form-group">
-						    <label for="lastName">Last name</label>
-						    <input type="text" class="form-control" placeholder="Thomas" required="required" id=lastName name="lastName">
-						  </div>
-						  <div class="form-group">
-						    <label for="username">Username</label>
-						    <input type="text" class="form-control" placeholder="bthomas" required="required" id=username name="username">
-						  </div>
-						  <div class="form-group">
-						    <label for="password">Password</label>
-						    <input type="password" class="form-control" placeholder="Password" required="required" id=password name="password">
-						  </div>
-						  <div class="form-group">
-						    <label for="passwordConfirm">Confirm Password</label>
-						    <input type="password" class="form-control" placeholder="Confirm Password" required="required" id=passwordConfirm name="passwordConfirm">
-						  </div>
-						  <input type="hidden" name="registration" value="1">
-						  <div class="form-group">
-						    <button type="submit" name="add" class="btn btn-success btn-block">Register</button>
-						  </div>
-						</form>
-					</div>
-				</div>
-				<div class="col-6">
-					<div id="LoginContainer" class="container frame">
-						<form name="loginForm" onsubmit="return(loginValidation());" method="post">
-						  <h2 class="text-center">Log in</h2>
-						  
-						  <div class="form-group">
-						    <label for="username">Username</label>
-						    <input type="text" class="form-control" placeholder="Bob.Thomas@gmail.com" required="required" id=usernameInput name="username">
-						  </div>
-						  <div class="form-group">
-						    <label for="password">Password</label>
-						    <input type="password" class="form-control" placeholder="Password" required="required" id=passwordInput name="password">
-						  </div>
-						  <input type="hidden" name="registration" value="0">
-						  <div class="form-group">
-						    <button type="submit" class="btn btn-primary btn-block">Log in</button>
-						  </div>
-						  <div id=error><?php echo $message ?></div>
-						</form>
-					</div>
-				</div>
+  	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" href="index.php">MDAVIS91.TECH</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Sections
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+	          <a class="dropdown-item" href="1-HTML/index.php">HTML</a>
+	          <a class="dropdown-item" href="2-CSS/index.php">CSS</a>
+	          <a class="dropdown-item" href="3-Javascript/index.php">JavaScript</a>
+	          <a class="dropdown-item" href="4-JQuery/index.php">JQuery</a>
+	          <a class="dropdown-item" href="5-Bootstrap/index.php">Bootstrap 4</a>
+	          <a class="dropdown-item" href="7-PHP/index.php">PHP</a>
+	          <a class="dropdown-item" href="8-SQL/index.php">MySQL</a>
+	        </div>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+	      </li>
+	    </ul>
+	    <form class="form-inline my-2 my-lg-0">
+	      <p></p>Hello <?php echo $userFirstName; ?>!</p>
+	      
+	    </form>
+	  </div>
+	</nav>
+
+
+	<div class="jumbotron light" id="intro">
+		<h1>Hello <?php echo $userFirstName; ?>!</h1>
+		<p>intro text</p>
+	</div>
+
+	<div class="container buffer">
+		<div class="card-deck">
+			
+			<div id="html_card" class="card h-100">
+			  <img src="resources/images/HTML5_logo.svg" class="card-img-top img-banner" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">HTML Works</h5>
+			    <p class="card-text">The foundation of the web.</p>
+			    <button type="button" onclick="window.location.href = '1-HTML/index.html'" class="btn btn-success btn-block">Check it out!</button>
+			  </div>
+			</div> 
+			
+
+			<div id="..." class="card h-100">
+			  <img src="resources/images/CSS3_logo.svg" class="card-img-top img-banner" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">CSS Works</h5>
+			    <p class="card-text">Making the web beautiful.</p>
+			    <button type="button" onclick="window.location.href = '2-CSS/index.html'" class="btn btn-primary btn-block">Check it out!</button>
+			  </div>
+			</div> 
+			
+
+			<div id="..." class="card h-100">
+			  <img src="resources/images/JavaScript_logo.svg" class="card-img-top img-banner" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">JavaScript</h5>
+			    <p class="card-text">Making the web responsive.</p>
+			    <button type="button" onclick="window.location.href = '3-Javascrip/index.html'" class="btn btn-warning btn-block">Check it out!</button>
+			  </div>
 			</div>
+
 		</div>
+	</div>
+
+	<div class="container buffer">
+		<div class="card-deck">
+			
+			<div id="..." class="card h-100">
+			  <img src="resources/images/jquery_logo.svg" class="card-img-top img-banner" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">Card title</h5>
+			    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			  </div>
+			</div> 
+			
+
+			<div id="..." class="card h-100">
+			  <img src="resources/images/Boostrap_logo.svg" class="card-img-top img-banner" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">Card title</h5>
+			    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			  </div>
+			</div> 
+			
+
+			<div id="..." class="card h-100">
+			  <img src="resources/images/Wordpress_logo.svg" class="card-img-top img-banner" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">Card title</h5>
+			    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			  </div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="container buffer">
+		<div class="card-deck">
+			
+			<div id="..." class="card h-100">
+			  <img src="resources/images/PHP_logo.svg" class="card-img-top img-banner" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">Card title</h5>
+			    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			  </div>
+			</div> 
+			
+
+			<div id="..." class="card h-100">
+			  <img src="resources/images/MySQL_logo.svg" class="card-img-top img-banner" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">Card title</h5>
+			    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			  </div>
+			</div> 
+			
+
+			<div id="..." class="card h-100">
+			  <img src="resources/images/API_logo.svg" class="card-img-top img-banner" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">Card title</h5>
+			    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			  </div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="container buffer">
+		<div class="card-deck">
+			
+			<div id="..." class="card h-100">
+			  <img src="resources/images/Python_logo.svg" class="card-img-top img-banner" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">Card title</h5>
+			    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			  </div>
+			</div> 
+			
+
+			<div id="..." class="card h-100">
+			  <img src="resources/images/CSS3_logo.svg" class="card-img-top img-banner" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">Card title</h5>
+			    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			  </div>
+			</div> 
+			
+
+			<div id="..." class="card h-100">
+			  <img src="resources/images/JavaScript_logo.svg" class="card-img-top img-banner" alt="...">
+			  <div class="card-body">
+			    <h5 class="card-title">Card title</h5>
+			    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			  </div>
+			</div>
+			
+		</div>
+	</div>
 
 
-	    <!-- Optional JavaScript -->
-	    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
-	    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
-	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
-	    <script type="text/javascript">
-	    	 //register form validation
-	    	 function registrationValidation() {
-	    	 	if(document.registerForm.firstName.value == ""){
-					alert( "Please provide your name!" );
-					document.registerForm.firstName.focus() ;
-					return false;
-				}
-				if(document.registerForm.lastName.value == ""){
-					alert( "Please provide your name!" );
-					document.registerForm.lastName.focus() ;
-					return false;
-				}
-				if(document.registerForm.username.value == ""){
-					alert( "Please choose a username." );
-					document.registerForm.username.focus() ;
-					return false;
-				}
-				if(document.registerForm.password.value == ""){
-					alert( "Please provide a password" );
-					document.registerForm.password.focus() ;
-					return false;
-				}
-				if(document.registerForm.passwordConfirm.value == ""){
-					alert( "Please confirm your password" );
-					document.registerForm.passwordConfirm.focus() ;
-					return false;
-				}
-				if(document.registerForm.passwordConfirm.value != document.registerForm.password.value){
-					alert( "The passwords you entered do not match." );
-					document.registerForm.password.focus() ;
-					return false;
-				}
-	    	 }
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-	    	 //login form validation
-	    	 function loginValidation() {
-	    	 	if((document.loginForm.username.value == "")||(document.loginForm.password.value == "")){
-					alert( "Invalid username or password" );
-					document.loginForm.username.focus() ;
-					return false;
-				}
-	    	 }
-	    </script>
+    <script type="text/javascript">
+    	 Custom Script
+    </script>
 
-	</body>
 
+  </body>
 </html>
