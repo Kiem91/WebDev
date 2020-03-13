@@ -2,10 +2,12 @@
         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     #LoginBody{
-        background-image: url("/resources/images/eclipse.jpg");
+        background-image: url("resources/images/eclipse.jpg");
     }
     #mainBody{
-        background-image: url("/resources/images/desert_mountains.jpg");
+        background-image: url("resources/images/desert_mountains.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
 
 	.frame {
@@ -23,4 +25,8 @@
     }
     .light{
         opacity: 80%;
+    }
+    .center{
+
+        width: 50%;
     }
