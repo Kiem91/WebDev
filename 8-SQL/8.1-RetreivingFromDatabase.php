@@ -26,11 +26,4 @@
 	$insertQuery = "INSERT INTO `users` (`email`, `password`) VALUES ('larry@domail.com', 'abc123')";
 
 	mysqli_query($link, $insertQuery);
-
-
-
-
-
-
-
 ?>
