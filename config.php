@@ -5,7 +5,7 @@
    define('DB_DATABASE', 'UserPRD-3132339d6e');
    $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
 
-   $conn = ' ';
+   $conn = 'Default Conn Message';
 
    if (!$db) {
    	$conn = mysqli_connect_error();
