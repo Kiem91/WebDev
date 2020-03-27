@@ -296,10 +296,10 @@
 	"buffers":
 	[
 		{
-			"file": "test.html",
+			"file": "8-SQL/index.php",
 			"settings":
 			{
-				"buffer_size": 9123,
+				"buffer_size": 3048,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -321,6 +321,15 @@
 				"encoding": "UTF-8",
 				"line_ending": "Windows",
 				"name": "<?php"
+			}
+		},
+		{
+			"file": "test.html",
+			"settings":
+			{
+				"buffer_size": 8201,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -408,6 +417,7 @@
 	"expanded_folders":
 	[
 		"/C/Users/davism5/Desktop/WebDev",
+		"/C/Users/davism5/Desktop/WebDev/1-HTML",
 		"/C/Users/davism5/Desktop/WebDev/8-SQL",
 		"/C/Users/davism5/Desktop/WebDev/resources"
 	],
@@ -504,35 +514,35 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "test.html",
+					"file": "8-SQL/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9123,
+						"buffer_size": 3048,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								9123
+								951,
+								951
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -562,7 +572,7 @@
 						"translation.y": 198.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -591,7 +601,7 @@
 						"translation.y": 323.628865979,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -602,6 +612,34 @@
 			[
 				{
 					"buffer": 3,
+					"file": "test.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8201,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								8201
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2268.37113402,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "index.php",
 					"semi_transient": false,
 					"settings":
@@ -627,11 +665,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "base.css",
 					"semi_transient": false,
 					"settings":
@@ -643,8 +681,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								574,
+								574
 							]
 						],
 						"settings":
@@ -657,11 +695,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "config.php",
 					"semi_transient": false,
 					"settings":
@@ -687,7 +725,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

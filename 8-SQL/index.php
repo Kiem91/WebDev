@@ -1,83 +1,90 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<div class="jumbotron" id="intro">
+		<h1>Section 8 MySQL</h1>
+		<img id="badge" src="..\resources\images\HTML5_logo.svg" align="left">
+		<p>MySQL is an open-source relational database management system (RDBMS). Its name is a combination of "My", the name of co-founder Michael Widenius's daughter, and "SQL", the abbreviation for Structured Query Language. MySQL is a component of the LAMP web application software stack (and others), which is an acronym for Linux, Apache, MySQL, Perl/PHP/Python. MySQL is used by many database-driven web applications, including Drupal, Joomla, phpBB, and WordPress. MySQL is also used by many popular websites, including Facebook, Flickr, MediaWiki, Twitter, and YouTube.</p>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<p>Below are pages created from following along with the course. The pages are broken up to demonstrate a specific function.</p>
+	</div>
 
-    <title>User Sign Up</title>
-  </head>
-  <body>
+	<div  class="container">
+		<div id="accordion">
+			<h3>Section 8.1 - Retreiving from the database</h3>
+			<div class="container pgContent">
+				<div id="1"></div>
+			</div>
+			<h3>Section 1.2 - Headers</h3>
+			<div class="container">
+				<div id="2"></div>
+			</div>
+			<h3>Section 1.3 - Paragraphs</h3>
+			<div class="container">
+				<div id="3"></div>
+			</div>
+			<h3>Section 1.4 - Lists</h3>
+			<div class="container">
+				<div id="4"></div>
+			</div> 
+			<h3>Section 1.5 - Images</h3>
+			<div class="container">
+				<div id="5"></div>
+			</div>
+			<h3>Section 1.6 - Forms</h3>
+			<div class="container">
+				<div id="6"></div>
+			</div>
+			<h3>Section 1.7 - Tables</h3>
+			<div class="container">
+				<div id="7"></div>
+			</div>
+			<h3>Section 1.8 Links</h3>
+			<div class="container">
+				<div id="8"></div>
+			</div>
+			<h3>Section 1.9 - Entities</h3>
+			<div class="container">
+				<div id="9"></div>
+			</div>
+			<h3>Section 1.10 IFrames</h3>
+			<div class="container">
+				<div id="10"></div>
+			</div>
+			<h3>Section 1.11 - Final</h3>
+				<div id="11"></div>
+			</div>
+		</div>
+	</div>
 
-  	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="#">Navbar</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-
-	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-	    <ul class="navbar-nav mr-auto">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Link</a>
-	      </li>
-	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Dropdown
-	        </a>
-	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="#">Action</a>
-	          <a class="dropdown-item" href="#">Another action</a>
-	          <div class="dropdown-divider"></div>
-	          <a class="dropdown-item" href="#">Something else here</a>
-	        </div>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-	      </li>
-	    </ul>
-	    <form class="form-inline my-2 my-lg-0">
-	      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-	    </form>
-	  </div>
-	</nav>
-
-
-    <h1>Please log in</h1>
-
-    <form>
-	  <div class="form-group">
-	    <label for="emailAddress">Email address</label>
-	    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Enter email" name="emailAddress">
-	    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-	  </div>
-	  <div class="form-group">
-	    <label for="password">Password</label>
-	    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
-	  </div>
-	  <div class="form-check">
-	    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-	    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-	  </div>
-	  <button type="submit" class="btn btn-primary">Submit</button>
-	</form>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.js" crossorigin="anonymous"></script>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.js" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-    	 Custom Script
+
+    	$(function(){
+    		$("#accordion").accordion({heightStyle: "content"});
+
+    		//Load unit pages.
+    		$("#1").load("1.1helloworld.html");
+    		$("#2").load("1.2headers.html");
+    		$("#3").load("1.3paragraphs.html");
+    		$("#4").load("1.4lists.html");
+    		$("#5").load("1.5images.html");
+    		$("#6").load("1.6forms.html",);
+    		$("#7").load("1.7tables.html");
+    		$("#8").load("1.8links.html");
+    		$("#9").load("1.9entities.html");
+    		$("#10").load("1.10iframes.html");
+    		$("#11").load("1.11moon.html"); 
+
+    	});
+
+
     </script>
 
 
