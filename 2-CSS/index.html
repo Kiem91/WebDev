@@ -1,39 +1,134 @@
 <!doctype html>
-<html>
-	<head>
-		<title>CSS Home</title>
-			<meta charset="utf-8" />
-			<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-			<meta name="viewport" content="width=device-width, initial-scale=1" />
-			<style type="text/css">
-			body {
-				background-color: #f0f0f2;
-				margin: 0;
-				padding: 0;
-				font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-				
-			}
-			div {
-				width: 600px;
-				margin: 5em auto;
-				padding: 50px;
-				background-color: #fff;
-				border-radius: 1em;
-			}
-			a:link, a:visited {
-				color: #38488f;
-				text-decoration: none;
-			}
-			@media (max-width: 700px) {
-				body {
-					background-color: #fff;
-				}
-				div {
-					width: auto;
-					margin: 0 auto;
-					border-radius: 0;
-					padding: 1em;
-				}
-			}
-			</style> 
-	</head>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link rel="stylesheet" type="text/css" href="../2-CSS/html.css">
+
+    <title>HTML Works</title>
+  </head>
+  <body id="cssIndexBody">
+
+	<div class="jumbotron" id="intro">
+		<h1>2.0 CSS</h1>
+		<img id="badge" src="..\resources\images\logos\CSS3_logo.svg" align="left">
+		<p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML.[1] CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript. The name cascading comes from the specified priority scheme to determine which style rule applies if more than one rule matches a particular element. This cascading priority scheme is predictable.</p>
+
+		<p>Below are HTML pages created from following along with the course. The pages are broken up to demonstrate a specific function.</p>
+	</div>
+
+	<div  class="container">
+		<div id="accordion">
+			<h3>Section 2.1 - Inline CSS</h3>
+			<div class="container pgContent">
+				<div id="1"></div>
+			</div>
+			<h3>Section 2.2 - Internal CSS</h3>
+			<div class="container">
+				<div id="2"></div>
+			</div>
+			<h3>Section 2.3 - Classes</h3>
+			<div class="container">
+				<div id="3"></div>
+			</div>
+			<h3>Section 2.4 - Divs</h3>
+			<div class="container">
+				<div id="4"></div>
+			</div> 
+			<h3>Section 2.5 - Colors</h3>
+			<div class="container">
+				<div id="5"></div>
+			</div>
+			<h3>Section 2.6 - Floating</h3>
+			<div class="container">
+				<div id="6"></div>
+			</div>
+			<h3>Section 2.7 - Postitioning</h3>
+			<div class="container">
+				<div id="7"></div>
+			</div>
+			<h3>Section 2.8 Margins</h3>
+			<div class="container">
+				<div id="8"></div>
+			</div>
+			<h3>Section 2.9 - Entities</h3>
+			<div class="container">
+				<div id="9"></div>
+			</div>
+			<h3>Section 2.10 IFrames</h3>
+			<div class="container">
+				<div id="10"></div>
+			</div>
+			<h3>Section 2.11 - Fonts</h3>
+			<div class="container">
+				<div id="11"></div>
+			</div>
+			<h3>Section 2.12 - Fonts</h3>
+			<div class="container">
+				<div id="12"></div>
+			</div>
+			<h3>Section 2.13 - Fonts</h3>
+			<div class="container">
+				<div id="13"></div>
+			</div>
+			<h3>Section 2.14 - Fonts</h3>
+			<div class="container">
+				<div id="14"></div>
+			</div>
+			<h3>Section 2.15 - BBC Site Clone</h3>
+			<div class="container">
+				<div id="15"></div>
+			</div>
+
+
+			
+		</div>
+	</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.js" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.js" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+    	$(function(){
+    		$("#accordion").accordion({heightStyle: "content"});
+
+    		//Load unit pages.
+    		$("#1").load("2.1inlinecss.html");
+    		$("#2").load("2.2internalcss.html");
+    		$("#3").load("2.3classes.html");
+    		$("#4").load("2.4divs.html");
+    		$("#5").load("2.5colors.html");
+    		$("#6").load("2.6floating.html",);
+    		$("#7").load("2.7positioning.html");
+    		$("#8").load("2.8margins.html");
+    		$("#9").load("2.9something.html");
+    		$("#10").load("2.10iframes.html");
+    		$("#11").load("2.11moon.html");
+    		$("#12").load("2.12moon.html");
+    		$("#13").load("2.13moon.html");
+    		$("#14").load("2.14moon.html");
+    		$("#15").load("2.15bbcsiteclone.html"); 
+
+    	});
+
+
+    </script>
+
+
+  </body>
+</html>
